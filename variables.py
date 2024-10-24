@@ -23,7 +23,7 @@ class Config(object):
     API_HASH = "550641aa3600a98c1cb94afc259f2244"
 
     # Database configuration (PostgreSQL)
-    DATABASE_URL = "postgres://oaykvtmj:bsIGPV7wmId1x1CNH9eqxQVX5t25cHI3@manny.db.elephantsql.com/oaykvtmj"
+    DATABASE_URL = "mongodb+srv://Cenzo:Cenzo123@cenzo.azbk1.mongodb.net/"
 
     # Event logs chat ID and message dump chat ID
     EVENT_LOGS = -1002183841044
