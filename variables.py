@@ -23,7 +23,7 @@ class Config(object):
     API_HASH = "550641aa3600a98c1cb94afc259f2244"
 
     # Database configuration (PostgreSQL)
-    DATABASE_URL = "mongodb+srv://Cenzo:Cenzo123@cenzo.azbk1.mongodb.net/"
+    DATABASE_URL = "postgresql://yamato_owner:bOEDh6mFsU7B@ep-black-butterfly-a5627dlz.us-east-2.aws.neon.tech/yamato?sslmode=require"
 
     # Event logs chat ID and message dump chat ID
     EVENT_LOGS = -1002183841044
