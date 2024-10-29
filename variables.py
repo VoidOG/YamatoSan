@@ -40,7 +40,7 @@ class Config(object):
     DB_NAME = "cenzo"
 
     # Bot token
-    TOKEN = "7744594521:AAF1qQUMxvwtCbsYTdEBZetZ5JX2A-gcHbs"  # Get bot token from @BotFather on Telegram
+    TOKEN = ""  # Get bot token from @BotFather on Telegram
 
     # Owner's Telegram user ID (Must be an integer)
     OWNER_ID = 6663845789
