@@ -44,7 +44,7 @@ async def news(_, message: Message):
                 relative_time = news_item["relative_time"]
                 news_url = news_item["url"]
 
-                message_text = f"𝗧𝗜𝗧𝗟𝗘: {title}\n𝗦𝗢𝗨𝗥𝗖𝗘: {source}\n𝗧𝗜𝗠𝗘: {relative_time}\n𝗘𝗫𝗖𝗘𝗥𝗣𝗧: {excerpt}\n𝗨𝗥𝗟: {news_url}"
+                message_text = f"𝖳𝗂𝗍𝗅𝖾: {title}\n𝖲𝗈𝗎𝗋𝖼𝖾: {source}\n𝖳𝗂𝗆𝖾: {relative_time}\n𝖤𝗑𝖼𝖾𝗋𝗉𝗍: {excerpt}\n𝖴𝖱𝖫: {news_url}"
                 await message.reply_text(message_text)
             else:
                 await message.reply_text("No news found.")
@@ -164,12 +164,12 @@ async def googleimg_search(client: Client, message: Message):
 
 
 # <=================================================== HELP ====================================================>
-__mod_name__ = "SEARCH"
+__mod_name__ = "𝖲𝖾𝖺𝗋𝖼𝗁"
 
 __help__ = """
-💭 𝗦𝗘𝗔𝗥𝗖𝗛
+💭 𝖲𝖾𝖺𝗋𝖼𝗁
 
-➠ *Available commands:*
+╭• *𝖠𝗏𝖺𝗂𝗅𝖺𝖻𝗅𝖾 𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌:*
 
 » /googleimg <search query>: It retrieves and displays images obtained through a Google image search.
 
@@ -179,7 +179,7 @@ __help__ = """
 
 » /bingsearch <search query> : get search result with links.
 
-➠ *Example:*
-➠ `/bingsearch app`: return search results.
+╭• *𝖤𝗑𝖺𝗆𝗉𝗅𝖾:*
+╭• `/bingsearch app`: return search results.
 """
 # <================================================ END =======================================================>
