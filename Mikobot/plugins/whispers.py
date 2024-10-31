@@ -1,8 +1,8 @@
 # SOURCE https://github.com/Team-ProjectCodeX
 # CREATED BY https://t.me/O_okarma
 # PROVIDED BY https://t.me/ProjectCodeX
-# ➥ @MIKO_V2BOT ʏᴏᴜʀ ᴍᴇssᴀɢᴇ @ᴜsᴇʀɴᴀᴍᴇ
-# ➥ @MIKO_V2BOT @ᴜsᴇʀɴᴀᴍᴇ ʏᴏᴜʀ ᴍᴇssᴀɢᴇ
+# ➥ @𝖸𝖺𝗆𝖺𝗍𝗈𝖲𝖺𝗇𝖡𝗈𝗍 ʏᴏᴜʀ ᴍᴇssᴀɢᴇ @ᴜsᴇʀɴᴀᴍᴇ
+# ➥ @𝖸𝖺𝗆𝖺𝗍𝗈𝖲𝖺𝗇𝖡𝗈𝗍 @ᴜsᴇʀɴᴀᴍᴇ ʏᴏᴜʀ ᴍᴇssᴀɢᴇ
 
 # TURN ON INLINE MODE FOR USE.
 
@@ -170,13 +170,13 @@ function(CallbackQueryHandler(showWhisper, pattern="^whisper_", block=False))
 
 # <==================================================== HELP ===================================================>
 __help__ = """
-➠ *Whisper inline function for secret chats.*
+╭• *𝖶𝗁𝗂𝗌𝗉𝖾𝗋 inline function for secret chats*
 
-➠ *Commands:*
+╭• *Commands:*
 
-» @MIKO_V2BOT your message @username
-» @MIKO_V2BOT @username your message
+» @YamatoSanBot 𝗒𝗈𝗎𝗋 𝗆𝖾𝗌𝗌𝖺𝗀𝖾 @username
+» @YamatoSanBot @username 𝗒𝗈𝗎𝗋 𝗆𝖾𝗌𝗌𝖺𝗀𝖾
 """
 
-__mod_name__ = "WHISPER-MSG"
+__mod_name__ = "𝖶𝗁𝗂𝗌𝗉𝖾𝗋 𝖳𝖾𝗑𝗍"
 # <==================================================== END ===================================================>
