@@ -52,14 +52,14 @@ async def rm_deletedacc(show):
     del_u = 0
     del_status = "Group is clean, 0 deleted accounts found."
     if con != "clean":
-        kontol = await show.reply("`Searching for deleted accounts...`")
+        kontol = await show.reply("`Searching for deleted account𝗌...`")
         async for user in show.client.iter_participants(show.chat_id):
             if user.deleted:
                 del_u += 1
                 await sleep(1)
         if del_u > 0:
             del_status = (
-                f"Searching... `{del_u}` deleted account(s) found,"
+                f"Searching... `{del_u}`deleted account(s) found ,"
                 "\nclean it with command `/zombies clean`"
             )
         return await kontol.edit(del_status)
@@ -85,10 +85,10 @@ async def rm_deletedacc(show):
             await tbot(EditBannedRequest(show.chat_id, user.id, UNBAN_RIGHTS))
             del_u += 1
     if del_u > 0:
-        del_status = f"Cleaned `{del_u}` zombies"
+        del_status = f"𝖢𝗅𝖾𝖺𝗇𝖾𝖽 `{del_u}` 𝗓𝗈𝗆𝖻𝗂𝖾𝗌"
     if del_a > 0:
         del_status = (
-            f"Zombies `{del_u}` zombies " f"\n`{del_a}` admin zombies not deleted."
+            f"Zombies `{del_u}` 𝗓𝗈𝗆𝖻𝗂𝖾𝗌 " f"\n`{del_a}` 𝖺𝖽𝗆𝗂𝗇 𝗓𝗈𝗆𝖻𝗂𝖾𝗌 𝖺𝗋𝖾 𝗇𝗈𝗍 𝖽𝖾𝗅𝖾𝗍𝖾𝖽."
         )
     await ok.edit(del_status)
 
@@ -98,11 +98,11 @@ async def rm_deletedacc(show):
 
 # <==================================================== HELP ===================================================>
 __help__ = """
-➠ *Remove Deleted Accounts*:
+╭• *Remove Deleted Accounts*:
 
 » /zombies: Starts searching for deleted accounts in the group.
 
 » /zombies clean: Removes the deleted accounts from the group.
 """
-__mod_name__ = "ZOMBIES"
+__mod_name__ = "𝖹𝖮𝖬𝖡𝖨𝖤𝖲"
 # <==================================================== END ===================================================>
