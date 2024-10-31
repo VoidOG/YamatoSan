@@ -285,7 +285,7 @@ async def kang_sticker(self: Client, ctx: Message, strings):
                     mime_type=self.guess_mime_type(filename),
                     attributes=[DocumentAttributeFilename(file_name=filename)],
                 ),
-                message=f"#Sticker kang by UserID -> {ctx.from_user.id}",
+                message=f"𝖲𝗍𝗂𝖼𝗄𝖾𝗋 𝗄𝖺𝗇𝗀𝖾𝖽 𝖻𝗒 -> {ctx.from_user.id}",
                 random_id=self.rnd_id(),
             ),
         )
@@ -587,19 +587,19 @@ async def give_st_info(c: app, m: Message):
     elif st_in.is_video:
         st_type = "Video"
     st_to_gib = f"""[Sticker]({m.reply_to_message.link}) info:
-➼ 𝗙𝗜𝗟𝗘 𝗜𝗗 : `{st_in.file_id}`
-➼ 𝗙𝗜𝗟𝗘 𝗡𝗔𝗠𝗘 : {st_in.file_name}
-➼ 𝗙𝗜𝗟𝗘 𝗨𝗡𝗜𝗤𝗨𝗘 𝗜𝗗 : `{st_in.file_unique_id}`
-➼ 𝗗𝗔𝗧𝗘 𝗔𝗡𝗗 𝗧𝗜𝗠𝗘 𝗢𝗙 𝗦𝗧𝗜𝗖𝗞𝗘𝗥 𝗖𝗥𝗘𝗔𝗧𝗘𝗗 : `{st_in.date}`
-➼ 𝗦𝗧𝗜𝗖𝗞𝗘𝗥 𝗧𝗬𝗣𝗘 : `{st_type}`
-➼ 𝗘𝗠𝗢𝗝𝗜 : {st_in.emoji}
-➼ 𝗣𝗔𝗖𝗞 𝗡𝗔𝗠𝗘 : {st_in.set_name}
+╭• 𝖥𝗂𝗅𝖾 𝖨𝖣 : `{st_in.file_id}`
+╭• 𝖥𝗂𝗅𝖾 𝖭𝖺𝗆𝖾 : {st_in.file_name}
+╭• 𝖥𝗂𝗅𝖾 𝖴𝗇𝗂𝗊𝗎𝖾 𝖨𝖣 : `{st_in.file_unique_id}`
+╭• 𝖣𝖺𝗍𝖾 𝖺𝗇𝖽 𝖳𝗂𝗆𝖾 𝗈𝖿 𝖲𝗍𝗂𝖼𝗄𝖾𝗋 𝖼𝗋𝖾𝖺𝗍𝖾𝖽 : `{st_in.date}`
+╭• 𝖲𝗍𝗂𝖼𝗄𝖾𝗋 𝗍𝗒𝗉𝖾 : `{st_type}`
+╭• 𝖤𝗆𝗈𝗃𝗂 : {st_in.emoji}
+╭• 𝖯𝖺𝖼𝗄 𝖭𝖺𝗆𝖾 : {st_in.set_name}
 """
     kb = IKM(
         [
             [
                 IKB(
-                    "➕ 𝗔𝗱𝗱 𝘀𝘁𝗶𝗰𝗸𝗲𝗿 𝗽𝗮𝗰𝗸",
+                    "𝖠𝖽𝖽 𝖲𝗍𝗂𝖼𝗄𝖾𝗋 𝖯𝖺𝖼𝗄 +",
                     url=f"https://t.me/addstickers/{st_in.set_name}",
                 )
             ]
@@ -611,7 +611,7 @@ async def give_st_info(c: app, m: Message):
 
 # <=================================================== HELP ====================================================>
 __help__ = """
-➠ *👨‍🏫 User Commands:*
+╭• *𝖴𝗌𝖾𝗋 𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌:*
 
 » /kang (/steal) < emoji >: Reply to a sticker or any supported media.
 
@@ -637,9 +637,9 @@ __help__ = """
     ○ /mmf Hello ; freinds : this will add Hello to the top and freinds at the bottom
     ○ /mmf ; Hello friends : this will add text at the bottom
 
-➠ *Note*
-➠ *mmf and getsticker only support photo and normal stickers for now*.
+╭• *𝖭𝗈𝗍𝖾*
+╭• *mmf and getsticker only support photo and normal stickers for now*.
 """
 
-__mod_name__ = "STICKERS"
+__mod_name__ = "𝖲𝗍𝗂𝖼𝗄𝖾𝗋𝗌"
 # <================================================ END =======================================================>
