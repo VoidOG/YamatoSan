@@ -42,10 +42,10 @@ class MatchManager:
 # <================================================ FUNCTION =======================================================>
 async def get_match_text(match, sport):
     match_text = f"{'🏏' if sport == 'cricket' else '⚽️'} **{match['title']}**\n\n"
-    match_text += f"🗓 *Date:* {match['date']}\n"
-    match_text += f"🏆 *Team 1:* {match['team1']}\n"
-    match_text += f"🏆 *Team 2:* {match['team2']}\n"
-    match_text += f"🏟️ *Venue:* {match['venue']}"
+    match_text += f"🗓 *𝖣𝖺𝗍𝖾:* {match['date']}\n"
+    match_text += f"🏆 *𝖳𝖾𝖺𝗆 1:* {match['team1']}\n"
+    match_text += f"🏆 *𝖳𝖾𝖺𝗆 2:* {match['team2']}\n"
+    match_text += f"🏟️ *𝖵𝖾𝗇𝗎𝖾:* {match['venue']}"
     return match_text
 
 
@@ -53,7 +53,7 @@ def create_inline_keyboard(sport):
     inline_keyboard = [
         [
             InlineKeyboardButton(
-                f"Next {sport.capitalize()} Match ➡️",
+                f"𝖭𝖾𝗑𝗍 {sport.capitalize()} 𝖬𝖺𝗍𝖼𝗁 ➡️",
                 callback_data=f"next_{sport}_match",
             )
         ]
@@ -72,7 +72,7 @@ async def get_cricket_matches(update: Update, context: ContextTypes.DEFAULT_TYPE
         await cricket_manager.fetch_matches()
 
         if not cricket_manager.matches:
-            await update.message.reply_text("No cricket matches found.")
+            await update.message.reply_text("𝖭𝗈 𝖼𝗋𝗂𝖼𝗄𝖾𝗍 𝗆𝖺𝗍𝖼𝗁𝖾𝗌 𝖿𝗈𝗎𝗇𝖽.")
             return
 
         next_matches = cricket_manager.get_next_matches(1)
@@ -96,7 +96,7 @@ async def get_football_matches(update: Update, context: ContextTypes.DEFAULT_TYP
         await football_manager.fetch_matches()
 
         if not football_manager.matches:
-            await update.message.reply_text("No football matches found.")
+            await update.message.reply_text("𝖭𝗈 𝖿𝗈𝗈𝗍𝖻𝖺𝗅𝗅 𝗆𝖺𝗍𝖼𝗁𝖾𝗌 𝖿𝗈𝗎𝗇𝖽.")
             return
 
         next_matches = football_manager.get_next_matches(1)
@@ -161,14 +161,14 @@ function(
 
 # <================================================= HELP ======================================================>
 __help__ = """
-🏅 *Match 𝗦chedule*
+🏅 *𝖬𝖺𝗍𝖼𝗁 𝖲𝖼𝗁𝖾𝖽𝗎𝗅𝖾*
 
-➠ *Commands*:
+╭• *𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌*:
 
 » /cricket: use this command to get information about the next cricket match.
 
 » /football: use this command to get information about the next football match.
 """
 
-__mod_name__ = "SPORTS"
+__mod_name__ = "𝖲𝗉𝗈𝗋𝗍𝗌 𝖨𝗇𝖿𝗈"
 # <================================================== END =====================================================>
