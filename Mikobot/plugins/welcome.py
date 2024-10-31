@@ -162,12 +162,12 @@ async def member_has_joined(client, member: ChatMemberUpdated):
             user_username = user.username if user.username else f"user?id={user.id}"
 
             # Create an inline keyboard with a URL button
-            inline_keyboard = IM([[IB("🔗 USER", url=f"https://t.me/{user_username}")]])
+            inline_keyboard = IM([[IB("𝖴𝗌𝖾𝗋", url=f"https://t.me/{user_username}")]])
 
             temp.MELCOW[f"welcome-{chat_id}"] = await client.send_photo(
                 member.chat.id,
                 photo=welcomeimg,
-                caption=f"**𝗛𝗲𝘆❗️{mention}, 𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝗧𝗼 {member.chat.title} 𝗚𝗿𝗼𝘂𝗽.**\n\n**𝗜𝗗 : {user_id}**\n**𝗗𝗔𝗧𝗘 𝗝𝗢𝗜𝗡𝗘𝗗 : {joined_date}**",
+                caption=f"𝖧𝖾𝗒 {mention}, 𝖶𝖾𝗅𝖼𝗈𝗆𝖾 𝗍𝗈 {member.chat.title} 𝗀𝗋𝗈𝗎𝗉.\n𝖨𝖣: {user_id}\n𝖣𝖺𝗍𝖾 𝖩𝗈𝗂𝗇𝖾𝖽: {joined_date}",
                 reply_markup=inline_keyboard,  # Add the inline keyboard
             )
         except Exception as e:
