@@ -83,16 +83,16 @@ async def mainwhisper(update: Update, context: ContextTypes.DEFAULT_TYPE):
     answers = [
         InlineQueryResultArticle(
             id=whisperId,
-            title=f"👤 Send a whisper message to {user}!",
+            title=f"Send a whisper message to {user}!",
             description="Only they can see it!",
             input_message_content=InputTextMessageContent(
-                f"🔐 A Whisper Message For {user}\nOnly they can see it!"
+                f"🔐 A Whisper Message For {user}\𝗇Only they can see it!"
             ),
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            "📩 𝗦𝗵𝗼𝘄 𝗪𝗵𝗶𝘀𝗽𝗲𝗿 📩",
+                            "𝖲𝗁𝗈𝗐 𝖶𝗁𝗂𝗌𝗉𝖾𝗋 𝖬𝖾𝗌𝗌𝖺𝗀𝖾",
                             callback_data=f"whisper_{whisperId}",
                         )
                     ]
@@ -100,7 +100,7 @@ async def mainwhisper(update: Update, context: ContextTypes.DEFAULT_TYPE):
             ),
         )
     ]
-
+    
     await context.bot.answer_inline_query(query.id, answers)
 
 
@@ -138,7 +138,7 @@ async def showWhisper(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
     else:
         await context.bot.answer_callback_query(
-            callback_query.id, "Not your Whisper!", show_alert=True
+            callback_query.id, "𝖲𝗈𝗋𝗋𝗒, 𝗒𝗈𝗎 𝖼𝖺𝗇'𝗍 𝗌𝖾𝖾 𝗍𝗁𝗂𝗌 𝗐𝗁𝗂𝗌𝗉𝖾𝗋 𝖻𝖾𝖼𝖺𝗎𝗌𝖾 𝗂𝗍 𝗐𝖺𝗌 𝗇𝗈𝗍 𝗌𝖾𝗇𝗍 𝗍𝗈 𝗒𝗈𝗎🔒.", show_alert=True
         )
 
 
