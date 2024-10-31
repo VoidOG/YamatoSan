@@ -233,7 +233,7 @@ async def reset_warns(update: Update, context: ContextTypes.DEFAULT_TYPE) -> str
             f"<b>𝖴𝗌𝖾𝗋:</b> {mention_html(warned.id, warned.first_name)}"
         )
     else:
-        await message.reply_text("No user has been designated!")
+        await message.reply_text("𝖭𝗈 𝗎𝗌𝖾𝗋 𝗁𝖺𝗌 𝖻𝖾𝖾𝗇 𝖽𝖾𝗌𝗂𝗀𝗇𝖺𝗍𝖾𝖽!")
     return ""
 
 
@@ -407,7 +407,7 @@ async def set_warn_limit(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
                 await msg.reply_text("Updated the warn limit to {}".format(args[0]))
                 return (
                     f"<b>{html.escape(chat.title)}:</b>\n"
-                    f"#SET_WARN_LIMIT\n"
+                    f"𝖲𝖾𝗍 𝖶𝖺𝗋𝗇 𝖫𝗂𝗆𝗂𝗍\n"
                     f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
                     f"Set the warn limit to <code>{args[0]}</code>"
                 )
@@ -496,7 +496,7 @@ __help__ = """
 
 » /warnlist: list of all current warning filters
 
-➠ *Admins only:*
+╭• *𝖠𝖽𝗆𝗂𝗇𝗌 𝖮𝗇𝗅𝗒:*
 
 » /warn <userhandle>: warn a user. After 3 warns, the user will be banned from the group. Can also be used as a reply.
 
@@ -514,7 +514,7 @@ be a sentence, encompass it with quotes, as such: `/addwarn "very angry" This is
 » /strongwarn <on/yes/off/no>: If set to on, exceeding the warn limit will result in a ban. Else, will just kick.
 """
 
-__mod_name__ = "WARN"
+__mod_name__ = "𝖶𝖺𝗋𝗇"
 
 WARN_HANDLER = CommandHandler(
     ["warn", "dwarn"], warn_user, filters=filters.ChatType.GROUPS, block=False
