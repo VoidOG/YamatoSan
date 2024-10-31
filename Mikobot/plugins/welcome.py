@@ -997,31 +997,31 @@ async def welcomemute(update: Update, context: ContextTypes.DEFAULT_TYPE) -> str
             )
             return (
                 f"<b>{html.escape(chat.title)}:</b>\n"
-                f"#𝐖𝐄𝐋𝐂𝐎𝐌𝐄_𝐌𝐔𝐓𝐄\n"
-                f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
-                f"Has toggled welcome mute to <b>soft</b>."
+                f"𝖶𝖤𝖫𝖢𝖮𝖬𝖤 𝖬𝖴𝖳𝖤\n"
+                f"<b>𝖠𝖽𝗆𝗂𝗇:</b> {mention_html(user.id, user.first_name)}\n"
+                f"Has toggled welcome mute to <b>𝗌𝗈𝖿𝗍</b>."
             )
         elif args[0].lower() in ["strong"]:
             sql.set_welcome_mutes(chat.id, "strong")
             await msg.reply_text(
-                "I will now mute people when they join until they prove they're not a bot. They will have 120 seconds before they get kicked.",
+                "I will now mute people when they join until they prove they're not a bot. They will have 120 seconds before they get kicked",
             )
             return (
                 f"<b>{html.escape(chat.title)}:</b>\n"
-                f"#𝐖𝐄𝐋𝐂𝐎𝐌𝐄_𝐌𝐔𝐓𝐄\n"
-                f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
-                f"Has toggled welcome mute to <b>strong</b>."
+                f"𝖶𝖾𝗅𝖼𝗈𝗆𝖾 𝖬𝗎𝗍𝖾\n"
+                f"<b>𝖠𝖽𝗆𝗂𝗇:</b> {mention_html(user.id, user.first_name)}\n"
+                f"Has toggled welcome mute to <b>𝗌𝗍𝗋𝗈𝗇𝗀</b>."
             )
         else:
             await msg.reply_text(
-                "Please enter <code>off</code>/<code>no</code>/<code>soft</code>/<code>strong</code>!",
+                "𝖯𝗅𝖾𝖺𝗌𝖾 𝖾𝗇𝗍𝖾𝗋 <code>𝗈𝖿𝖿</code>/<code>𝗇𝗈</code>/<code>𝗌𝗈𝖿𝗍</code>/<code>𝗌𝗍𝗋𝗈𝗇𝗀</code>!",
                 parse_mode=ParseMode.HTML,
             )
             return ""
     else:
         curr_setting = sql.welcome_mutes(chat.id)
         reply = (
-            "Give me a setting!\nChoose one out of: <code>off</code>/<code>no</code> or <code>soft</code> or <code>strong</code> only! \n"
+            "Give me a setting!\nChoose one out of: <code>𝗈𝖿𝖿</code>/<code>𝗇𝗈</code> or <code>𝗌𝗈𝖿𝗍</code> or <code>𝗌𝗍𝗋𝗈𝗇𝗀</code> only! \n"
             f"Current setting: <code>{curr_setting}</code>"
         )
         await msg.reply_text(reply, parse_mode=ParseMode.HTML)
