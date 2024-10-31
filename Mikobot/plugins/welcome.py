@@ -295,7 +295,7 @@ async def send(update: Update, message, keyboard, backup_message):
                 msg = await dispatcher.bot.send_message(
                     chat.id,
                     backup_message
-                    + "\nNote: An error occurred when sending the custom message. Please update.",
+                    + "\𝗇Note: An error occurred when sending the custom message. Please update.",
                     parse_mode=ParseMode.MARKDOWN,
                 )
             except:
@@ -355,7 +355,7 @@ async def new_member(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             if new_mem.id == OWNER_ID:
                 await update.effective_message.reply_text(
-                    "Oh, darling, I have searched for you everywhere.",
+                    "Oh,𝖡𝗎𝖽𝖽𝗒, I have searched for you everywhere",
                     reply_to_message_id=reply,
                 )
                 welcome_log = (
@@ -379,7 +379,7 @@ async def new_member(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             elif new_mem.id in DRAGONS:
                 await update.effective_message.reply_text(
-                    "Whoa! A dragon disaster just joined! Stay alert!",
+                    "𝖶𝗁𝗈𝖺, 𝖠 𝖽𝗋𝖺𝗀𝗈𝗇 𝖽𝗂𝗌𝖺𝗌𝗍𝖾𝗋 𝗃𝗎𝗌𝗍 𝗃𝗈𝗂𝗇𝖾𝖽!! 𝖲𝗍𝖺𝗒 𝖠𝗅𝖾𝗋𝗍!!",
                     reply_to_message_id=reply,
                 )
                 welcome_log = (
@@ -396,26 +396,26 @@ async def new_member(update: Update, context: ContextTypes.DEFAULT_TYPE):
                         creator = x.user
                         break
                 if creator:
-                    reply = """#NEWGROUP \
-                        \nID:   `{}` \
+                    reply = """#𝖭𝖾𝗐𝖦𝗋𝗈𝗎𝗉 \
+                        \n𝖨𝖣:   `{}` \
                     """.format(
                         chat.id
                     )
 
                     if chat.title:
-                        reply += "\nGroup name:   **{}**".format(
+                        reply += "\nGroup name: {}".format(
                             escape_markdown(chat.title)
                         )
 
                     if chat.username:
-                        reply += "\nUsername: @{}".format(
+                        reply += "\n𝖴𝗌𝖾𝗋𝗇𝖺𝗆𝖾: @{}".format(
                             escape_markdown(chat.username)
                         )
 
-                    reply += "\nCreator ID:   `{}`".format(creator.id)
+                    reply += "\n𝖢𝗋𝖾𝖺𝗍𝖾𝗋 𝖨𝖣:   `{}`".format(creator.id)
 
                     if creator.username:
-                        reply += "\nCreator Username: @{}".format(creator.username)
+                        reply += "\n𝖢𝗋𝖾𝖺𝗍𝖾𝗋 𝖴𝗌𝖾𝗋𝗇𝖺𝗆𝖾: @{}".format(creator.username)
 
                     await bot.send_message(
                         EVENT_LOGS,
@@ -425,14 +425,14 @@ async def new_member(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 else:
                     await bot.send_message(
                         EVENT_LOGS,
-                        "#NEW_GROUP\n<b>Group name:</b> {}\n<b>ID:</b> <code>{}</code>".format(
+                        "#𝖭𝖤𝖶𝖦𝖱𝖮𝖴𝖯\n<b>𝖦𝗋𝗈𝗎𝗉 𝗇𝖺𝗆𝖾:</b> {}\n<b>𝖨𝖣:</b> <code>{}</code>".format(
                             html.escape(chat.title),
                             chat.id,
                         ),
                         parse_mode=ParseMode.HTML,
                     )
                 await update.effective_message.reply_text(
-                    "I feel like I'm gonna suffocate in here.",
+                    "I feel like I'm gonna suffocate in here",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -569,7 +569,7 @@ async def new_member(update: Update, context: ContextTypes.DEFAULT_TYPE):
                             [
                                 [
                                     InlineKeyboardButton(
-                                        text="YES, I'M HUMAN",
+                                        text="Y𝖾𝗌, I'𝗆 𝖧𝗎𝗆𝖺𝗇",
                                         callback_data="user_join_({})".format(
                                             new_mem.id
                                         ),
@@ -629,9 +629,9 @@ async def new_member(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if user.id == new_mem.id:
             welcome_log = (
                 "{}\n"
-                "#USER_JOINED\n"
-                "<b>User</b>: {}\n"
-                "<b>ID</b>: <code>{}</code>".format(
+                "#𝖴𝗌𝖾𝗋_𝖩𝗈𝗂𝗇𝖾𝖽\n"
+                "<b>𝖴𝗌𝖾𝗋</b>: {}\n"
+                "<b>𝖨𝖣</b>: <code>{}</code>".format(
                     html.escape(chat.title),
                     mention_html(user.id, user.first_name),
                     user.id,
@@ -640,9 +640,9 @@ async def new_member(update: Update, context: ContextTypes.DEFAULT_TYPE):
         elif new_mem.is_bot and user.id != new_mem.id:
             welcome_log = (
                 "{}\n"
-                "#BOT_ADDED\n"
-                "<b>Bot</b>: {}\n"
-                "<b>ID</b>: <code>{}</code>".format(
+                "#𝖡𝗈𝗍_𝖠𝖽𝖽𝖾𝖽\n"
+                "<b>𝖡𝗈𝗍</b>: {}\n"
+                "<b>𝖨𝖣</b>: <code>{}</code>".format(
                     html.escape(chat.title),
                     mention_html(new_mem.id, new_mem.first_name),
                     new_mem.id,
@@ -651,9 +651,9 @@ async def new_member(update: Update, context: ContextTypes.DEFAULT_TYPE):
         else:
             welcome_log = (
                 "{}\n"
-                "#USER_ADDED\n"
-                "<b>User</b>: {}\n"
-                "<b>ID</b>: <code>{}</code>".format(
+                "#𝖴𝗌𝖾𝗋_𝖩𝗈𝗂𝗇𝖾𝖽\n"
+                "<b>𝖴𝗌𝖾𝗋</b>: {}\n"
+                "<b>𝖨𝖣</b>: <code>{}</code>".format(
                     html.escape(chat.title),
                     mention_html(new_mem.id, new_mem.first_name),
                     new_mem.id,
@@ -676,7 +676,7 @@ async def check_not_bot(member, chat_id, message_id, context):
 
         try:
             await bot.edit_message_text(
-                "Kicks user\nThey can always rejoin and try.",
+                "𝖪𝗂𝖼𝗄𝗌 𝖴𝗌𝖾𝗋\nThey can always rejoin and try.",
                 chat_id=chat_id,
                 message_id=message_id,
             )
@@ -713,7 +713,7 @@ async def left_member(update, context: ContextTypes.DEFAULT_TYPE):
 
             if left_mem.id == OWNER_ID:
                 await update.effective_message.reply_text(
-                    "My master left..",
+                    "My master left...",
                     reply_to_message_id=reply,
                 )
                 return
@@ -788,7 +788,7 @@ async def welcome(update, context: ContextTypes.DEFAULT_TYPE):
         pref, welcome_m, cust_content, welcome_type = sql.get_welc_pref(chat.id)
         await update.effective_message.reply_text(
             f"This chat has its welcome setting set to: `{pref}`.\n"
-            f"The welcome message (not filling the {{}}) is:",
+            f"The welcome message (not filling the {{}}) 𝗂𝗌:",
             parse_mode=ParseMode.MARKDOWN,
         )
 
@@ -849,7 +849,7 @@ async def goodbye(update, context: ContextTypes.DEFAULT_TYPE):
         pref, goodbye_m, goodbye_type = sql.get_gdbye_pref(chat.id)
         await update.effective_message.reply_text(
             f"This chat has its goodbye setting set to: `{pref}`.\n"
-            f"The goodbye message (not filling the {{}}) is:",
+            f"The goodbye message (not filling the {{}}) 𝗂𝗌:",
             parse_mode=ParseMode.MARKDOWN,
         )
 
@@ -907,7 +907,7 @@ async def set_welcome(update, context: ContextTypes.DEFAULT_TYPE):
     return (
         f"<b>{html.escape(chat.title)}:</b>\n"
         f"#SET_WELCOME\n"
-        f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
+        f"<b>𝖠𝖽𝗆𝗂𝗇:</b> {mention_html(user.id, user.first_name)}\n"
         "Set the welcome message."
     )
 
@@ -925,8 +925,8 @@ async def reset_welcome(update, context: ContextTypes.DEFAULT_TYPE):
 
     return (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        f"#RESET_WELCOME\n"
-        f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
+        f"#𝖱𝖤𝖲𝖤𝖳_𝖶𝖤𝖫𝖢𝖮𝖬𝖤\n"
+        f"<b>𝖠𝖽𝗆𝗂𝗇:</b> {mention_html(user.id, user.first_name)}\n"
         "Reset the welcome message to default."
     )
 
@@ -947,7 +947,7 @@ async def set_goodbye(update, context: ContextTypes.DEFAULT_TYPE):
     await msg.reply_text("Successfully set custom goodbye message!")
     return (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        f"#SET_GOODBYE\n"
+        f"#𝖲𝖤𝖳_𝖦𝖮𝖮𝖣𝖡𝖸𝖤\n"
         f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
         "Set the goodbye message."
     )
@@ -987,8 +987,8 @@ async def welcomemute(update: Update, context: ContextTypes.DEFAULT_TYPE) -> str
             return (
                 f"<b>{html.escape(chat.title)}:</b>\n"
                 f"#WELCOME_MUTE\n"
-                f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
-                f"Has toggled welcome mute to <b>off</b>."
+                f"<b>𝖠𝖽𝗆𝗂𝗇:</b> {mention_html(user.id, user.first_name)}\n"
+                f"Has toggled welcome mute to <b>𝗈𝖿𝖿</b>."
             )
         elif args[0].lower() in ["soft"]:
             sql.set_welcome_mutes(chat.id, "soft")
