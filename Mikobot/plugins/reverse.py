@@ -14,14 +14,14 @@ ENDPOINT = "https://sasta-api.vercel.app/googleImageSearch"
 
 # Define strings
 class STRINGS:
-    REPLY_TO_MEDIA = "ℹ️ Please reply to a message that contains one of the supported media types, such as a photo, sticker, or image file."
-    UNSUPPORTED_MEDIA_TYPE = "⚠️ <b>Unsupported media type!</b>\nℹ️ Please reply with a supported media type: image, sticker, or image file."
+    REPLY_TO_MEDIA = " Please reply to a message that contains one of the supported media types, such as a photo, sticker, or image file."
+    UNSUPPORTED_MEDIA_TYPE = " <b>Unsupported media type!</b>\nℹ️ Please reply with a supported media type: image, sticker, or image file."
 
-    REQUESTING_API_SERVER = "🫧"
+    REQUESTING_API_SERVER = "⎆"
 
-    DOWNLOADING_MEDIA = "🔍"
-    UPLOADING_TO_API_SERVER = "📤"
-    PARSING_RESULT = "📥"
+    DOWNLOADING_MEDIA = "↓"
+    UPLOADING_TO_API_SERVER = "↑"
+    PARSING_RESULT = "⇌"
 
     EXCEPTION_OCCURRED = "❌Exception occurred!\n\n<b>Exception: {}"
 
@@ -29,7 +29,7 @@ class STRINGS:
 Query: {query}
 Google Page: <a href="{search_url}">Link</a>
     """
-    OPEN_SEARCH_PAGE = "OPEN LINK"
+    OPEN_SEARCH_PAGE = "𝖮𝗉𝖾𝗇 𝖫𝗂𝗇𝗄"
 
 
 # Define command handlers
