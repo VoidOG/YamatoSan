@@ -40,7 +40,7 @@ from Mikobot.plugins.helper_funcs.string_handling import split_quotes
 from Mikobot.plugins.log_channel import loggable
 
 WARN_HANDLER_GROUP = 9
-CURRENT_WARNING_FILTER_STRING = "<b>Current warning filters in this chat:</b>\n"
+CURRENT_WARNING_FILTER_STRING = "<b>𝖢𝗎𝗋𝗋𝖾𝗇𝗍 𝗐𝖺𝗋𝗇𝗂𝗇𝗀 𝖿𝗂𝗅𝗍𝖾𝗋𝗌 𝗂𝗇 𝗍𝗁𝗂𝗌 𝖼𝗁𝖺𝗍:</b>\n"
 
 
 # Not async
@@ -52,7 +52,7 @@ async def warn(
     warner: User = None,
 ) -> str:
     if await is_user_admin(chat, user.id):
-        await message.reply_text("Damn admins, They are too far to be Warned")
+        await message.reply_text("𝖣𝖺𝗆𝗇 𝖠𝖽𝗆𝗂𝗇, 𝖳𝗁𝖾𝗒 𝖺𝗋𝖾 𝗍𝗈𝗈 𝖿𝖺𝗋 𝗍𝗈 𝖻𝖾 𝗐𝖺𝗋𝗇𝖾𝖽 ")
         return
 
     if warner:
@@ -67,7 +67,7 @@ async def warn(
         if soft_warn:  # punch
             chat.unban_member(user.id)
             reply = (
-                f"<code>❕</code><b>Kick Event</b>\n"
+                f"<code>❕</code><b>𝖪𝗂𝖼𝗄 𝖤𝗏𝖾𝗇𝗍</b>\n"
                 f"<code> </code><b>•  User:</b> {mention_html(user.id, user.first_name)}\n"
                 f"<code> </code><b>•  Count:</b> {limit}"
             )
@@ -75,7 +75,7 @@ async def warn(
         else:  # ban
             await chat.ban_member(user.id)
             reply = (
-                f"<code>❕</code><b>Ban Event</b>\n"
+                f"<code>❕</code><b>𝖡𝖺𝗇 𝖤𝗏𝖾𝗇𝗍</b>\n"
                 f"<code> </code><b>•  User:</b> {mention_html(user.id, user.first_name)}\n"
                 f"<code> </code><b>•  Count:</b> {limit}"
             )
@@ -87,11 +87,11 @@ async def warn(
         keyboard = None
         log_reason = (
             f"<b>{html.escape(chat.title)}:</b>\n"
-            f"#WARN_BAN\n"
-            f"<b>Admin:</b> {warner_tag}\n"
-            f"<b>User:</b> {mention_html(user.id, user.first_name)}\n"
-            f"<b>Reason:</b> {reason}\n"
-            f"<b>Counts:</b> <code>{num_warns}/{limit}</code>"
+            f"𝖶𝖺𝗋𝗇 𝖡𝖺𝗇\n"
+            f"<b>𝖠𝖽𝗆𝗂𝗆:</b> {warner_tag}\n"
+            f"<b>𝖴𝗌𝖾𝗋:</b> {mention_html(user.id, user.first_name)}\n"
+            f"<b>𝖱𝖾𝖺𝗌𝗈𝗇:</b> {reason}\n"
+            f"<b>𝖢𝗈𝗎𝗇𝗍𝗌:</b> <code>{num_warns}/{limit}</code>"
         )
 
     else:
@@ -99,7 +99,7 @@ async def warn(
             [
                 [
                     InlineKeyboardButton(
-                        "🔘 Remove warn",
+                        "𝖱𝖾𝗆𝗈𝗏𝖾 𝗐𝖺𝗋𝗇",
                         callback_data="rm_warn({})".format(user.id),
                     ),
                 ],
@@ -107,20 +107,20 @@ async def warn(
         )
 
         reply = (
-            f"<code>❕</code><b>Warn Event</b>\n"
-            f"<code> </code><b>•  User:</b> {mention_html(user.id, user.first_name)}\n"
-            f"<code> </code><b>•  Count:</b> {num_warns}/{limit}"
+            f"<code>❕</code><b>𝖶𝖺𝗋𝗇 𝖤𝗏𝖾𝗇𝗍</b>\n"
+            f"<code> </code><b>•  𝖴𝗌𝖾𝗋:</b> {mention_html(user.id, user.first_name)}\n"
+            f"<code> </code><b>•  𝖢𝗈𝗎𝗇𝗍:</b> {num_warns}/{limit}"
         )
         if reason:
-            reply += f"\n<code> </code><b>•  Reason:</b> {html.escape(reason)}"
+            reply += f"\n<code> </code><b>•  𝖱𝖾𝖺𝗌𝗈𝗇:</b> {html.escape(reason)}"
 
         log_reason = (
             f"<b>{html.escape(chat.title)}:</b>\n"
-            f"#WARN\n"
-            f"<b>Admin:</b> {warner_tag}\n"
-            f"<b>User:</b> {mention_html(user.id, user.first_name)}\n"
-            f"<b>Reason:</b> {reason}\n"
-            f"<b>Counts:</b> <code>{num_warns}/{limit}</code>"
+            f"𝖶𝖺𝗋𝗇\n"
+            f"<b>𝖠𝖽𝗆𝗂𝗇:</b> {warner_tag}\n"
+            f"<b>𝖴𝗌𝖾𝗋:</b> {mention_html(user.id, user.first_name)}\n"
+            f"<b>𝖱𝖾𝖺𝗌𝗈𝗇:</b> {reason}\n"
+            f"<b>𝖢𝗈𝗎𝗇𝗍𝗌:</b> <code>{num_warns}/{limit}</code>"
         )
 
     try:
@@ -128,7 +128,7 @@ async def warn(
             reply, reply_markup=keyboard, parse_mode=ParseMode.HTML
         )
     except BadRequest as excp:
-        if excp.message == "Reply message not found":
+        if excp.message == "𝖱𝖾𝗉𝗅𝗒 𝗆𝖾𝗌𝗌𝖺𝗀𝖾 𝗇𝗈𝗍 𝖿𝗈𝗎𝗇𝖽":
             # Do not reply
             await message.reply_text(
                 reply,
@@ -153,7 +153,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> str:
         if isinstance(chat_member, (ChatMemberAdministrator, ChatMemberOwner)):
             pass
         else:
-            await query.answer("You need to be admin to do this!")
+            await query.answer("𝖸𝗈𝗎 𝗇𝖾𝖾𝖽 𝗍𝗈 𝖻𝖾 𝖺𝖽𝗆𝗂𝗇 𝗍𝗈 𝖽𝗈 𝗍𝗁𝗂𝗌!")
             return
         res = sql.remove_warn(user_id, chat.id)
         if res:
@@ -164,13 +164,13 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> str:
             user_member = await chat.get_member(user_id)
             return (
                 f"<b>{html.escape(chat.title)}:</b>\n"
-                f"#UNWARN\n"
-                f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
-                f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
+                f"𝖴𝗇𝗐𝖺𝗋𝗇\n"
+                f"<b>𝖠𝖽𝗆𝗂𝗇:</b> {mention_html(user.id, user.first_name)}\n"
+                f"<b>𝖴𝗌𝖾𝗋:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
             )
         else:
             await update.effective_message.edit_text(
-                "User already has no warns.",
+                "𝖴𝗌𝖾𝗋 𝗁𝖺𝗌 𝖺𝗅𝗋𝖾𝖺𝖽𝗒 𝗇𝗈 𝗐𝖺𝗋𝗇𝗌.",
                 parse_mode=ParseMode.HTML,
             )
 
@@ -208,7 +208,7 @@ async def warn_user(update: Update, context: ContextTypes.DEFAULT_TYPE) -> str:
             member = await chat.get_member(user_id)
             return await warn(member.user, chat, reason, message, warner)
     else:
-        await message.reply_text("That looks like an invalid User ID to me.")
+        await message.reply_text("𝖳𝗁𝖺𝗍 𝗅𝗈𝗈𝗄𝗌 𝗂𝗇𝗏𝖺𝗅𝗂𝖽 𝗎𝗌𝖾𝗋 𝗂𝖽 𝗍𝗈 𝗆𝖾!!)
     return ""
 
 
@@ -228,9 +228,9 @@ async def reset_warns(update: Update, context: ContextTypes.DEFAULT_TYPE) -> str
         warned = await chat.get_member(user_id).user
         return (
             f"<b>{html.escape(chat.title)}:</b>\n"
-            f"#RESETWARNS\n"
-            f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
-            f"<b>User:</b> {mention_html(warned.id, warned.first_name)}"
+            f"𝖱𝖾𝗌𝖾𝗍𝖶𝖺𝗋𝗇𝗌\n"
+            f"<b>𝖠𝖽𝗆𝗂𝗇:</b> {mention_html(user.id, user.first_name)}\n"
+            f"<b>𝖴𝗌𝖾𝗋:</b> {mention_html(warned.id, warned.first_name)}"
         )
     else:
         await message.reply_text("No user has been designated!")
