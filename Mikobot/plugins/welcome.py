@@ -1054,9 +1054,9 @@ async def clean_welcome(update: Update, context: ContextTypes.DEFAULT_TYPE) -> s
         )
         return (
             f"<b>{html.escape(chat.title)}:</b>\n"
-            f"#𝐂𝐋𝐄𝐀𝐍_𝐖𝐄𝐋𝐂𝐎𝐌𝐄\n"
+            f"𝖢𝗅𝖾𝖺𝗇 𝖶𝖾𝗅𝖼𝗈𝗆𝖾\n"
             f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
-            "Has toggled clean welcomes to <code>on</code>."
+            "Has toggled clean welcomes to <code>𝗈𝗇</code>."
         )
     elif args[0].lower() in ("off", "no"):
         sql.set_clean_welcome(str(chat.id), False)
@@ -1065,9 +1065,9 @@ async def clean_welcome(update: Update, context: ContextTypes.DEFAULT_TYPE) -> s
         )
         return (
             f"<b>{html.escape(chat.title)}:</b>\n"
-            f"#𝐂𝐋𝐄𝐀𝐍_𝐖𝐄𝐋𝐂𝐎𝐌𝐄\n"
-            f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
-            "Has toggled clean welcomes to <code>off</code>."
+            f"𝖢𝗅𝖾𝖺𝗇 𝖶𝖾𝗅𝖼𝗈𝗆𝖾\n"
+            f"<b>𝖠𝖽𝗆𝗂𝗇:</b> {mention_html(user.id, user.first_name)}\n"
+            "Has toggled clean welcomes to <code>𝗈𝖿𝖿</code>."
         )
     else:
         await update.effective_message.reply_text(
@@ -1100,19 +1100,19 @@ async def cleanservice(update: Update, context: ContextTypes.DEFAULT_TYPE) -> st
                 )
         else:
             await update.effective_message.reply_text(
-                "Usage is <code>on</code>/<code>yes</code> or <code>off</code>/<code>no</code>",
+                "Usage is <code>𝗈𝗇</code>/<code>𝗒𝖾𝗌</code> or <code>𝗈𝖿𝖿</code>/<code>𝗇𝗈</code>",
                 parse_mode=ParseMode.HTML,
             )
     else:
         curr = sql.clean_service(chat.id)
         if curr:
             await update.effective_message.reply_text(
-                "Welcome clean service is : <code>on</code>",
+                "Welcome clean service is : <code>𝗈𝖿𝖿</code>",
                 parse_mode=ParseMode.HTML,
             )
         else:
             await update.effective_message.reply_text(
-                "Welcome clean service is : <code>off</code>",
+                "Welcome clean service is : <code>𝗈𝖿𝖿</code>",
                 parse_mode=ParseMode.HTML,
             )
 
