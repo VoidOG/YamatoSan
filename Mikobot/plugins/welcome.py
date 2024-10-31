@@ -1184,11 +1184,11 @@ async def user_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 WELC_MUTE_HELP_TXT = (
-    "You can get the bot to mute new people who join your group and hence prevent spambots from flooding your group. "
+    "You can get the bot to mute new people who join your group and hence prevent spambots from flooding your group!!\𝗇"
     "The following options are possible:\n"
-    "• `/welcomemute soft`: Restricts new members from sending media for 24 hours.\n"
-    "• `/welcomemute strong`: Mutes new members until they tap on a button, thereby verifying they're human.\n"
-    "• `/welcomemute off`: Turns off welcomemute.\n"
+    "• /welcomemute soft: Restricts new members from sending media for 24 hours.\n"
+    "• /welcomemute strong: Mutes new members until they tap on a button, thereby verifying they're human.\n"
+    "• /welcomemute off: Turns off welcomemute.\n"
     "Note: Strong mode kicks a user from the chat if they don't verify in 120 seconds. They can always rejoin though."
 )
 
@@ -1204,14 +1204,14 @@ async def welcome_help(update: Update, context: ContextTypes.DEFAULT_TYPE):
         " • `{username}`: This represents the user's *username*. Defaults to a *mention* of the user's"
         " first name if they have no username.\n"
         " • `{mention}`: This simply *mentions* a user - tagging them with their first name.\n"
-        " • `{id}`: This represents the user's *ID*\n"
+        " • `{id}`: This represents the user's 𝖨𝖣\n"
         " • `{count}`: This represents the user's *member number*.\n"
         " • `{chatname}`: This represents the *current chat name*.\n"
         "\nEach variable must be surrounded by `{}` to be replaced.\n"
-        "Welcome messages also support markdown, so you can make any elements bold/italic/code/links. "
+        "Welcome messages also support markdown, so you can make any elements bold/italic/code/links."
         "Buttons are also supported, so you can make your welcomes look awesome with some nice intro buttons."
         "\nTo create a button linking to your rules, use this: `[rules](buttonurl://t.me/"
-        f"{context.bot.username}?start=group_id)`. Simply replace `group_id` with your group's ID,"
+        f"{context.bot.username}?start=group_id)`. Simply replace `group_id` with your group's 𝖨𝖣,"
         " which can be obtained via /id, and you're good to go. Note that group IDs are usually preceded by a `-` sign, so please don't remove it."
         " You can even set images/gifs/videos/voice messages as the welcome message by replying to the desired media,"
         " and calling `/setwelcome`."
@@ -1247,16 +1247,16 @@ def __chat_settings__(chat_id, user_id):
 
 
 __help__ = """
-➠ *Admins Only:*
+╭• *Admins Only:*
 
-➠ *Default Welcome CMDS:*
+╭• *Default Welcome C𝗈𝗆𝗆𝖺𝗇𝖽𝗌:*
 » /dwelcome on : Enables the default template welcome.
-» /dwelcome off : Disables the default template welcome.
+» /dwelcome off : Enables the default template welcome.
 
-➠ *Normal Welcome CMDS:*
+╭• *𝖭𝗈𝗋𝗆𝖺𝗅 𝖶𝖾𝗅𝖼𝗈𝗆𝖾 𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌:*
 » /welcome <on/off>: Enable/disable welcome messages.
 » /welcome: Shows current welcome settings.
-» /welcome noformat: Shows current welcome settings, without the formatting - useful to recycle your welcome messages!
+» /welcome noformat: Shows current welcome settings, without the formatting - useful to recycle your welcome messages.
 » /goodbye: Same usage and args as /welcome
 » /setwelcome <sometext>: Set a custom welcome message. If used replying to media, uses that media.
 » /setgoodbye <sometext>: Set a custom goodbye message. If used replying to media, uses that media.
@@ -1266,10 +1266,10 @@ __help__ = """
 » /welcomemutehelp: Gives information about welcome mutes.
 » /cleanservice <on/off>: Deletes Telegram's welcome/left service messages.
 
-➠ *Example:*
+╭• *𝖤𝗑𝖺𝗆𝗉𝗅𝖾:*
 User joined chat, user left chat.
 
-➠ *Welcome Markdown:*
+╭• *𝖶𝖾𝗅𝖼𝗈𝗆𝖾 𝖬𝖺𝗋𝗄𝖽𝗈𝗐𝗇:*
 » /welcomehelp: View more formatting information for custom welcome/goodbye messages.
 """
 
