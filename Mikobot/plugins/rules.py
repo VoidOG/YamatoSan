@@ -67,7 +67,7 @@ async def send_rules(update, chat_id, from_pm=False):
                 [
                     [
                         InlineKeyboardButton(
-                            text="RULES",
+                            text="𝖱𝗎𝗅𝖾𝗌",
                             url=f"t.me/{bot.username}?start={chat_id}",
                         ),
                     ],
@@ -81,7 +81,7 @@ async def send_rules(update, chat_id, from_pm=False):
                 [
                     [
                         InlineKeyboardButton(
-                            text="RULES",
+                            text="𝖱𝗎𝗅𝖾𝗌",
                             url=f"t.me/{bot.username}?start={chat_id}",
                         ),
                     ],
@@ -146,15 +146,15 @@ def __chat_settings__(chat_id, user_id):
 
 # <================================================= HELP ======================================================>
 __help__ = """
-➠ /rules: Get the rules for this chat.
+╭• /rules: Get the rules for this chat.
 
-➠ *Admins only*:
+╭• *𝖠𝖽𝗆𝗂𝗇𝗌 𝗈𝗇𝗅𝗒*:
 » /setrules <your rules here>: Set the rules for this chat.
 
 » /clearrules: Clear the rules for this chat.
 """
 
-__mod_name__ = "RULES"
+__mod_name__ = "𝖱𝗎𝗅𝖾𝗌"
 
 # <================================================ HANDLER =======================================================>
 function(
