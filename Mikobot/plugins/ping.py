@@ -18,15 +18,15 @@ async def ptb_ping(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = update.effective_message
 
     start_time = time.time()
-    message = await msg.reply_text("Pining")
+    message = await msg.reply_text("𝖯𝗂𝗇𝗀𝗂𝗇𝗀")
     end_time = time.time()
-    telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ms"
+    telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " 𝗆𝗌"
     uptime = get_readable_time((time.time() - StartTime))
 
     await message.edit_text(
-        "🏓 <b>PONG</b>\n\n"
-        "<b>Time taken:</b> <code>{}</code>\n"
-        "<b>Uptime:</b> <code>{}</code>".format(telegram_ping, uptime),
+        "🏓 <b>𝖯𝗈𝗇𝗀</b>\n\n"
+        "<b>𝖳𝗂𝗆𝖾 𝗍𝖺𝗄𝖾𝗇:</b> <code>{}</code>\n"
+        "<b>𝖴𝗉𝗍𝗂𝗆𝖾:</b> <code>{}</code>".format(telegram_ping, uptime),
         parse_mode=ParseMode.HTML,
     )
 
