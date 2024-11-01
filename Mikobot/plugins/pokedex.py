@@ -29,7 +29,7 @@ async def get_pokemon_info(name_or_id):
             return response.json()
 
     except Exception as e:
-        print(f"An error occurred: {str(e)}")
+        print(f"𝖠𝗇 𝖾𝗋𝗋𝗈𝗋 𝗈𝖼𝖼𝗎𝗋𝖾𝖽: {str(e)}")
 
     return None
 
@@ -42,29 +42,29 @@ async def pokedex(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             if pokemon_info:
                 reply_message = (
-                    f"🐾 𝗡𝗔𝗠𝗘: {pokemon_info['name']}\n"
-                    f"•➥ 𝗜𝗗: {pokemon_info['id']}\n"
-                    f"•➥ 𝗛𝗘𝗜𝗚𝗛𝗧: {pokemon_info['height']}\n"
-                    f"•➥ 𝗪𝗘𝗜𝗚𝗛𝗧: {pokemon_info['weight']}\n"
+                    f"╭• 𝖭𝖺𝗆𝖾: {pokemon_info['name']}\n"
+                    f"╭• 𝖨𝖣: {pokemon_info['id']}\n"
+                    f"╭• 𝖧𝖾𝗂𝗀𝗁𝗍: {pokemon_info['height']}\n"
+                    f"╭• 𝖶𝖾𝗂𝗀𝗁𝗍: {pokemon_info['weight']}\n"
                 )
 
                 abilities = ", ".join(
                     ability["ability"]["name"] for ability in pokemon_info["abilities"]
                 )
-                reply_message += f"•➥ 𝗔𝗕𝗜𝗟𝗜𝗧𝗜𝗘𝗦: {abilities}\n"
+                reply_message += f"╭• 𝖠𝖻𝗂𝗅𝗂𝗍𝗂𝖾𝗌: {abilities}\n"
 
                 types = ", ".join(
                     type_info["type"]["name"] for type_info in pokemon_info["types"]
                 )
-                reply_message += f"•➥ 𝗧𝗬𝗣𝗘𝗦: {types}\n"
+                reply_message += f"╭• 𝖳𝗒𝗉𝖾𝗌: {types}\n"
 
                 image_url = f"https://img.pokemondb.net/artwork/large/{pokemon_info['name']}.jpg"
 
                 # Create inline buttons
                 keyboard = [
                     [
-                        InlineKeyboardButton(text="🔖 STATS", callback_data="stats"),
-                        InlineKeyboardButton(text="⚜️ MOVES", callback_data="moves"),
+                        InlineKeyboardButton(text=" 𝖲𝗍𝖺𝗍𝗌", callback_data="stats"),
+                        InlineKeyboardButton(text=" 𝖬𝗈𝗏𝖾𝗌", callback_data="moves"),
                     ]
                 ]
 
@@ -76,11 +76,11 @@ async def pokedex(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     reply_markup=reply_markup,
                 )
             else:
-                await update.message.reply_text("Pokemon not found.")
+                await update.message.reply_text("𝖯𝗈𝗄𝖾𝗆𝗈𝗇 𝗇𝗈𝗍 𝖿𝗈𝗎𝗇𝖽.")
         else:
-            await update.message.reply_text("Please provide a Pokemon name or ID.")
+            await update.message.reply_text("𝖯𝗅𝖾𝖺𝗌𝖾 𝗀𝖺𝗏𝖾 𝖺 𝗉𝗈𝗄𝖾𝗆𝗈𝗇 𝗇𝖺𝗆𝖾 𝗈𝗋 𝖨𝖣")
     except Exception as e:
-        await update.message.reply_text(f"An error occurred: {str(e)}")
+        await update.message.reply_text(f"𝖠𝗇 𝖾𝗋𝗋𝗈𝗋 𝗈𝖼𝖼𝗎𝗋𝖾𝖽: {str(e)}")
 
 
 async def callback_query_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -96,12 +96,12 @@ async def callback_query_handler(update: Update, context: ContextTypes.DEFAULT_T
                 f"{stat['stat']['name'].upper()}: {stat['base_stat']}"
                 for stat in pokemon_info["stats"]
             )
-            stats_message = f"•➥ STATS:\n{stats}\n"
+            stats_message = f"╭• 𝖲𝗍𝖺𝗍𝗌:\n{stats}\n"
 
             moves = ", ".join(
                 move_info["move"]["name"] for move_info in pokemon_info["moves"]
             )
-            moves_message = f"•➥ MOVES: {moves}"
+            moves_message = f"╭• 𝖬𝗈𝗏𝖾𝗌: {moves}"
 
             if query.data == "stats":
                 await query.message.reply_text(stats_message)
@@ -117,9 +117,9 @@ async def callback_query_handler(update: Update, context: ContextTypes.DEFAULT_T
                 else:
                     await query.message.reply_text(moves_message)
         else:
-            await query.message.reply_text("Pokemon not found.")
+            await query.message.reply_text("𝖯𝗈𝗄𝖾𝗆𝗈𝗇 𝗇𝗈𝗍 𝖿𝗈𝗎𝗇𝖽.")
     except Exception as e:
-        await query.message.reply_text(f"An error occurred: {str(e)}")
+        await query.message.reply_text(f"𝖠𝗇 𝖾𝗋𝗋𝗈𝗋 𝗈𝖼𝖼𝗎𝗋𝗋𝖾𝖽: {str(e)}")
 
 
 # <================================================ HANDLER =======================================================>
@@ -132,12 +132,12 @@ function(
 # <================================================ HANDLER =======================================================>
 __help__ = """
 
-🍥 *POKEMON SEARCH*
+╭• *𝖯𝗈𝗄𝖾𝗆𝗈𝗇 𝖲𝖾𝖺𝗋𝖼𝗁*
 
-➠ *Commands*:
+╭• *𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌*:
 
-»  /pokedex < Search > : Gives that pokemon info.
+╭•  /pokedex < Search > : 𝖦𝗂𝗏𝖾𝗌 𝗍𝗁𝖺𝗍 𝗉𝗈𝗄𝖾𝗆𝗈𝗇 𝗂𝗇𝖿𝗈.
 """
 
-__mod_name__ = "POKEDEX"
+__mod_name__ = "𝖯𝗈𝗄𝖾𝖽𝖾𝗑"
 # <================================================ END =======================================================>
