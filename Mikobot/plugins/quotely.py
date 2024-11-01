@@ -205,9 +205,9 @@ async def async_searcher(
 async def quott_(event):
     match = event.pattern_match.group(1).strip()
     if not event.is_reply:
-        return await event.reply("Please reply to a message.")
+        return await event.reply("𝖯𝗅𝖾𝖺𝗌𝖾 𝗋𝖾𝗉𝗅𝗒 𝗍𝗈 𝖺 𝗆𝖾𝗌𝗌𝖺𝗀𝖾!!")
 
-    msg = await event.reply("Creating quote, please wait.")
+    msg = await event.reply("𝖢𝗋𝖾𝖺𝗍𝗂𝗇𝗀 𝗊𝗎𝗈𝗍𝖾, 𝗉𝗅𝖾𝖺𝗌𝖾 𝗐𝖺𝗂𝗍.")
     reply = await event.get_reply_message()
     replied_to, reply_ = None, None
 
@@ -276,19 +276,19 @@ async def quott_(event):
 # <=================================================== HELP ====================================================>
 
 
-__mod_name__ = "QUOTELY"
+__mod_name__ = "𝖰𝗎𝗈𝗍𝖾𝗅𝗒"
 
 __help__ = """   
-»  /q : Create quote.
+╭•  /q : 𝖢𝗋𝖾𝖺𝗍𝖾 𝖰𝗎𝗈𝗍𝖾.
 
-» /q r : Get replied quote.
+╭• /q r : 𝖦𝖾𝗍 𝗋𝖾𝗉𝗅𝗂𝖾𝖽 𝗊𝗎𝗈𝗍𝖾.
 
-» /q 2 ᴛᴏ 8 : Get multiple quotes.
+╭• /q 2 𝗍𝗈 8 : 𝖦𝖾𝗍 𝗆𝗎𝗅𝗍𝗂𝗉𝗅𝖾 𝗊𝗎𝗈𝗍𝖾𝗌.
 
-» /q < any colour name > : Create any coloured quotes.
+╭• /q < 𝖺𝗇𝗒 𝖼𝗈𝗅𝗈𝗋 𝗇𝖺𝗆𝖾 > : 𝖢𝗋𝖾𝖺𝗍𝖾 𝖺𝗇𝗒 𝖼𝗈𝗅𝗈𝗎𝗋𝖾𝖽 𝗊𝗎𝗈𝗍𝖾.
 
-➠ Example:
+╭• *𝖤𝗑𝖺𝗆𝗉𝗅𝖾:*
 
-» /q red , /q blue etc.
+╭• /q 𝗋𝖾𝖽 , /q 𝖻𝗅𝗎𝖾 𝖾𝗍𝖼.
 """
 # <================================================ END =======================================================>
