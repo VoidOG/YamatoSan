@@ -15,10 +15,10 @@ async def get_palm_response(api_params):
         if response.status_code == 200:
             data = response.json()
             return data.get(
-                "content", "Error: Empty response received from the PALM API."
+                "content", "𝖤𝗋𝗋𝗈𝗋: 𝖤𝗆𝗉𝗍𝗒 𝗋𝖾𝗌𝗉𝗈𝗇𝗌𝖾 𝗋𝖾𝖼𝖾𝗂𝗏𝖾𝖽 𝖿𝗋𝗈𝗆 𝗉𝖺𝗅𝗆𝖠𝖯𝖨."
             )
         else:
-            return f"Error: Request failed with status code {response.status_code}."
+            return f"𝖤𝗋𝗋𝗈𝗋: 𝖱𝖾𝗊𝗎𝖾𝗌𝗍 𝖿𝖺𝗂𝗅𝖾𝖽 𝗐𝗂𝗍𝗁 𝗌𝗍𝖺𝗍𝗎𝗌 𝖼𝗈𝖽𝖾 {response.status_code}."
     except fetch.RequestError as e:
         return f"Error: An error occurred while calling the PALM API. {e}"
 
@@ -26,12 +26,12 @@ async def get_palm_response(api_params):
 # Command handler for /palm
 @app.on_message(filters.text)
 async def palm_chatbot(client, message):
-    if not message.text.startswith("Miko"):
+    if not message.text.startswith("𝖸𝖺𝗆𝖺𝗍𝗈"):
         return
         # your code here
     args = message.text.split(maxsplit=1)
     if len(args) < 2:
-        await message.reply("Give me a query to search.")
+        await message.reply("𝖦𝗂𝗏𝖾 𝗆𝖾 𝖺 𝗊𝗎𝖾𝗋𝗒 𝗍𝗈 𝗌𝖾𝖺𝗋𝖼𝗁")
         return
 
     input_text = args[1]
@@ -51,9 +51,9 @@ async def palm_chatbot(client, message):
 
 
 __help__ = """
-➦ *Write Miko with any sentence it will work as chatbot.*
+╭• *𝖶𝗋𝗂𝗍𝖾 𝖸𝖺𝗆𝖺𝗍𝗈 𝗐𝗂𝗍𝗁 𝖺𝗇𝗒 𝗌𝖾𝗇𝗍𝖾𝗇𝖼𝖾, 𝗂𝗍 𝗐𝗂𝗅 𝗐𝗈𝗋𝗄 𝖺𝗌 𝖼𝗁𝖺𝗍𝖻𝗈𝗍*
 
-*Example*: Miko are you a bot?
+╭• *𝖤𝗑𝖺𝗆𝗉𝗅𝖾*: 𝖸𝖺𝗆𝖺𝗍𝗈 𝖺𝗋𝖾 𝗒𝗈𝗎 𝖺 𝖻𝗈𝗍?
 """
 
-__mod_name__ = "CHATBOT"
+__mod_name__ = "𝖢𝗁𝖺𝗍𝖻𝗈𝗍"
