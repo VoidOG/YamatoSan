@@ -29,35 +29,35 @@ from Mikobot.plugins.log_channel import loggable
 ad = AlphabetDetector()
 
 LOCK_TYPES = {
-    "audio": filters.AUDIO,
-    "voice": filters.VOICE,
-    "document": filters.Document.ALL,
-    "video": filters.VIDEO,
-    "contact": filters.CONTACT,
-    "photo": filters.PHOTO,
-    "url": filters.Entity(MessageEntity.URL) | filters.CaptionEntity(MessageEntity.URL),
-    "bots": filters.StatusUpdate.NEW_CHAT_MEMBERS,
-    "forward": filters.FORWARDED,
-    "game": filters.GAME,
-    "location": filters.LOCATION,
-    "egame": filters.Dice.ALL,
-    "rtl": "rtl",
-    "button": "button",
-    "inline": "inline",
-    "phone": filters.Entity(MessageEntity.PHONE_NUMBER)
+    "╭•audio": filters.AUDIO,
+    "╭•voice": filters.VOICE,
+    "╭•document": filters.Document.ALL,
+    "╭•video": filters.VIDEO,
+    "╭•contact": filters.CONTACT,
+    "╭•photo": filters.PHOTO,
+    "╭•url": filters.Entity(MessageEntity.URL) | filters.CaptionEntity(MessageEntity.URL),
+    "╭•bots": filters.StatusUpdate.NEW_CHAT_MEMBERS,
+    "╭•forward": filters.FORWARDED,
+    "╭•game": filters.GAME,
+    "╭•location": filters.LOCATION,
+    "╭•egame": filters.Dice.ALL,
+    "╭•rtl": "rtl",
+    "╭•button": "button",
+    "╭•inline": "inline",
+    "╭•phone": filters.Entity(MessageEntity.PHONE_NUMBER)
     | filters.CaptionEntity(MessageEntity.PHONE_NUMBER),
-    "command": filters.COMMAND,
-    "email": filters.Entity(MessageEntity.EMAIL)
+    "╭•command": filters.COMMAND,
+    "╭•email": filters.Entity(MessageEntity.EMAIL)
     | filters.CaptionEntity(MessageEntity.EMAIL),
-    "anonchannel": "anonchannel",
-    "forwardchannel": "forwardchannel",
-    "forwardbot": "forwardbot",
+    "╭•anonchannel": "anonchannel",
+    "╭•forwardchannel": "forwardchannel",
+    "╭•forwardbot": "forwardbot",
     # "invitelink": ,
-    "videonote": filters.VIDEO_NOTE,
-    "emojicustom": filters.Entity(MessageEntity.CUSTOM_EMOJI)
+    "╭•videonote": filters.VIDEO_NOTE,
+    "╭•emojicustom": filters.Entity(MessageEntity.CUSTOM_EMOJI)
     | filters.CaptionEntity(MessageEntity.CUSTOM_EMOJI),
-    "stickerpremium": filters.Sticker.PREMIUM,
-    "stickeranimated": filters.Sticker.ANIMATED,
+    "╭•stickerpremium": filters.Sticker.PREMIUM,
+    "╭•stickeranimated": filters.Sticker.ANIMATED,
 }
 
 LOCK_CHAT_RESTRICTION = {
@@ -670,33 +670,33 @@ async def __chat_settings__(chat_id, user_id):
 
 
 __help__ = """
-➠ Do stickers annoy you? or want to avoid people sharing links? or pictures? \
+╭• Do stickers annoy you? or want to avoid people sharing links? or pictures? \
 You're in the right place!
 The locks module allows you to lock away some common items in the \
 telegram world; our bot will automatically delete them!
 
-» /locktypes: Lists all possible locktypes
+╭• /locktypes: Lists all possible locktypes
 
-➠ *Admins only:*
+╭• *𝖠𝖽𝗆𝗂𝗇𝗌 𝖮𝗇𝗅𝗒:*
 » /lock <type>: Lock items of a certain type (not available in private)
 » /unlock <type>: Unlock items of a certain type (not available in private)
 » /locks: The current list of locks in this chat.
 
-➠ Locks can be used to restrict a group's users.
+╭• Locks can be used to restrict a group's users.
 eg:
 Locking urls will auto-delete all messages with urls, locking stickers will restrict all \
 non-admin users from sending stickers, etc.
 Locking bots will stop non-admins from adding bots to the chat.
 Locking anonchannel will stop anonymous channel from messaging in your group.
 
-➠ *Note:*
+╭• *𝖭𝗈𝗍𝖾:*
 
 » Unlocking permission *info* will allow members (non-admins) to change the group information, such as the description or the group name
 
 » Unlocking permission *pin* will allow members (non-admins) to pin a message in a group
 """
 
-__mod_name__ = "LOCKS"
+__mod_name__ = "𝖫𝗈𝖼𝗄𝗌"
 
 LOCKTYPES_HANDLER = DisableAbleCommandHandler("locktypes", locktypes, block=False)
 LOCK_HANDLER = CommandHandler(
