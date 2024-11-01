@@ -67,14 +67,14 @@ async def wallpaper(event):
 async def enable_nekomode(event):
     chat_id = event.chat_id
     await nekomode_on(chat_id)
-    await event.reply("Nekomode has been enabled.")
+    await event.reply("𝖭𝖾𝗄𝗈𝗆𝗈𝖽𝖾 𝗁𝖺𝗌 𝖻𝖾𝖾𝗇 𝖾𝗇𝖺𝖻𝗅𝖾𝖽.")
 
 
 @tbot.on(events.NewMessage(pattern="/nekomode off"))
 async def disable_nekomode(event):
     chat_id = event.chat_id
     await nekomode_off(chat_id)
-    await event.reply("Nekomode has been disabled.")
+    await event.reply("𝖭𝖾𝗄𝗈𝗆𝖺𝖽𝖾 𝗁𝖺𝗌 𝖻𝖾𝖾𝗇 𝖾𝗇𝖺𝖻𝗅𝖾𝖽")
 
 
 @tbot.on(events.NewMessage(pattern=r"/(?:{})".format("|".join(allowed_commands))))
@@ -95,10 +95,10 @@ async def nekomode_commands(event):
 
 
 __help__ = """
-*✨ Sends fun Gifs/Images*
+╭• *𝖲𝖾𝗇𝖽𝗌 𝖿𝗎𝗇 𝗀𝗂𝖿/𝗂𝗆𝖺𝗀𝖾𝗌*
 
-➥ /nekomode on : Enables fun neko mode.
-➥ /nekomode off : Disables fun neko mode
+╭• /nekomode on : 𝖤𝗇𝖺𝖻𝗅𝖾𝗌 𝖿𝗎𝗇 𝗇𝖾𝗄𝗈𝗆𝗈𝖽𝖾.
+╭• /nekomode off : 𝖣𝗂𝗌𝖺𝖻𝗅𝖾𝗌 𝖿𝗎𝗇 𝗇𝖾𝗄𝗈𝗆𝗈𝖽𝖾.
 
 » /bully: sends random bully gifs.
 » /neko: sends random neko gifs.
@@ -127,5 +127,5 @@ __help__ = """
 » /handhold: sends random handhold GIFs.
 """
 
-__mod_name__ = "NEKO"
+__mod_name__ = "𝖭𝖾𝗄𝗈"
 # <================================================ END =======================================================>
