@@ -17,13 +17,13 @@ class STRINGS:
     REPLY_TO_MEDIA = " Please reply to a message that contains one of the supported media types, such as a photo, sticker, or image file."
     UNSUPPORTED_MEDIA_TYPE = " <b>Unsupported media type!</b>\nℹ️ Please reply with a supported media type: image, sticker, or image file."
 
-    REQUESTING_API_SERVER = "⎆"
+    REQUESTING_API_SERVER = "↗️"
 
-    DOWNLOADING_MEDIA = "↓"
-    UPLOADING_TO_API_SERVER = "↑"
-    PARSING_RESULT = "⇌"
+    DOWNLOADING_MEDIA = "⬇️"
+    UPLOADING_TO_API_SERVER = "⬆️"
+    PARSING_RESULT = "📨"
 
-    EXCEPTION_OCCURRED = "❌Exception occurred!\n\n<b>Exception: {}"
+    EXCEPTION_OCCURRED = "𝖤𝗑𝖼𝖾𝗉𝗍𝗂𝗈𝗇 𝗈𝖼𝖼𝗎𝗋𝗋𝖾𝖽!\n\n<b>𝖤𝗑𝖼𝖾𝗉𝗍𝗂𝗈𝗇: {}"
 
     RESULT = """
 Query: {query}
