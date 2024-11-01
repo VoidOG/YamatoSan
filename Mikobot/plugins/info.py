@@ -85,45 +85,45 @@ async def info(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if chat_obj.type == ChatType.PRIVATE:
         if chat_obj.username:
-            head = f"⇨【 <b>USER INFORMATION</b> 】⇦\n\n"
+            head = f"╭• <b>𝖴𝗌𝖾𝗋 𝖨𝗇𝖿𝗈𝗋𝗆𝖺𝗍𝗂𝗈𝗇 </b> 】⇦\n\n"
             if chat_obj.username.endswith("bot"):
-                head = f"⇨【 <b>BOT INFORMATION</b> 】⇦\n\n"
+                head = f"╭• <b>𝖡𝗈𝗍 𝖨𝗇𝖿𝗈𝗋𝗆𝖺𝗍𝗂𝗈𝗇</b> 】⇦\n\n"
 
-        head += f"➲ <b>ID:</b> <code>{chat_obj.id}</code>"
-        head += f"\n➲ <b>First Name:</b> {chat_obj.first_name}"
+        head += f"╭• <b>𝖨𝖣:</b> <code>{chat_obj.id}</code>"
+        head += f"\n╭• <b>𝖥𝗂𝗋𝗌𝗍 𝖭𝖺𝗆𝖾:</b> {chat_obj.first_name}"
         if chat_obj.last_name:
-            head += f"\n➲ <b>Last Name:</b> {chat_obj.last_name}"
+            head += f"\n╭• <b>𝖫𝖺𝗌𝗍 𝖭𝖺𝗆𝖾:</b> {chat_obj.last_name}"
         if chat_obj.username:
-            head += f"\n➲ <b>Username:</b> @{chat_obj.username}"
-        head += f"\n➲ <b>Permalink:</b> {mention_html(chat_obj.id, 'link')}"
+            head += f"\n╭• <b>𝖴𝗌𝖾𝗋𝗇𝖺𝗆𝖾:</b> @{chat_obj.username}"
+        head += f"\n╭• <b>𝖯𝖾𝗋𝗆𝖺𝗇𝖾𝗇𝗍 𝖫𝗂𝗇𝗄:</b> {mention_html(chat_obj.id, 'link')}"
 
         if chat_obj.username and not chat_obj.username.endswith("bot"):
-            head += f"\n\n💎 <b>Premium User:</b> {premium}"
+            head += f"\n\n╭• <b>𝖯𝗋𝖾𝗆𝗂𝗎𝗆 𝖴𝗌𝖾𝗋:</b> {premium}"
 
         if chat_obj.bio:
-            head += f"\n\n<b>➲ Bio:</b> {chat_obj.bio}"
+            head += f"\n\n<b>╭• 𝖡𝗂𝗈:</b> {chat_obj.bio}"
 
         chat_member = await chat.get_member(chat_obj.id)
         if isinstance(chat_member, ChatMemberAdministrator):
-            head += f"\n➲ <b>Presence:</b> {chat_member.status}"
+            head += f"\n╭• <b>𝖯𝗋𝖾𝗌𝖾𝗇𝖼𝖾:</b> {chat_member.status}"
             if chat_member.custom_title:
-                head += f"\n➲ <b>Admin Title:</b> {chat_member.custom_title}"
+                head += f"\n╭• <b>𝖠𝖽𝗆𝗂𝗇 𝖳𝗂𝗍𝗅𝖾:</b> {chat_member.custom_title}"
         else:
-            head += f"\n➲ <b>Presence:</b> {chat_member.status}"
+            head += f"\n╭• <b>𝖯𝗋𝖾𝗌𝖾𝗇𝖼𝖾:</b> {chat_member.status}"
 
         if is_approved(chat.id, chat_obj.id):
-            head += f"\n➲ <b>Approved:</b> This user is approved in this chat."
+            head += f"\n╭• <b>𝖠𝗉𝗉𝗋𝗈𝗏𝖾𝖽:</b> This user is approved in this chat."
 
         disaster_level_present = False
 
         if chat_obj.id == OWNER_ID:
-            head += "\n\n👑 <b>The disaster level of this person is My Owner.</b>"
+            head += "\n\n <b>The disaster level of this person is My Owner.</b>"
             disaster_level_present = True
         elif chat_obj.id in DEV_USERS:
-            head += "\n\n🐉 <b>This user is a member of Infamous Hydra.</b>"
+            head += "\n\n <b>This user is a member of Infamous Hydra.</b>"
             disaster_level_present = True
         elif chat_obj.id in DRAGONS:
-            head += "\n\n🐲 <b>The disaster level of this person is Dragon.</b>"
+            head += "\n\n <b>The disaster level of this person is Dragon.</b>"
             disaster_level_present = True
         if disaster_level_present:
             head += " [?]"
@@ -137,16 +137,16 @@ async def info(update: Update, context: ContextTypes.DEFAULT_TYPE):
             head += "\n\n" + mod_info if mod_info else ""
 
     if chat_obj.type == ChatType.SENDER:
-        head = f"📨 Sender Chat Information:\n"
+        head = f"𝖲𝖾𝗇𝖽𝖾𝗋 𝖢𝗁𝖺𝗍 𝖨𝗇𝖿𝗈𝗋𝗆𝖺𝗍𝗂𝗈𝗇:\n"
         await reply_with_text("Found sender chat, getting information...")
-        head += f"<b>ID:</b> <code>{chat_obj.id}</code>"
+        head += f"<b>𝖨𝖣:</b> <code>{chat_obj.id}</code>"
         if chat_obj.title:
-            head += f"\n🏷️ <b>Title:</b> {chat_obj.title}"
+            head += f"\ <b>Title:</b> {chat_obj.title}"
         if chat_obj.username:
-            head += f"\n📧 <b>Username:</b> @{chat_obj.username}"
-        head += f"\n🔗 Permalink: {mention_html(chat_obj.id, 'link')}"
+            head += f"\ <b>Username:</b> @{chat_obj.username}"
+        head += f"\n Permalink: {mention_html(chat_obj.id, 'link')}"
         if chat_obj.description:
-            head += f"\n📝 <b>Description:</b> {chat_obj.description}"
+            head += f"\n <b>Description:</b> {chat_obj.description}"
 
     elif chat_obj.type == ChatType.CHANNEL:
         head = f"Channel Information:\n"
@@ -194,7 +194,7 @@ async def info(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 @support_plus
 async def stats(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    stats = "📊 <b>Yae Miko Bot's Statistics:</b>\n\n" + "\n".join(
+    stats = " <b>𝖸𝖺𝗆𝖺𝗍𝗈 𝖲𝖺𝗇'𝗌 𝖲𝗍𝖺𝗍𝗂𝗌𝗍𝗂𝖼𝗌:</b>\n\n" + "\n".join(
         [mod.__stats__() for mod in STATS]
     )
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
@@ -202,7 +202,7 @@ async def stats(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
         [
             InlineKeyboardButton(
-                "㊋ Infamous • Hydra", url="https://t.me/Infamous_Hydra"
+                "𝖠𝗅𝖼𝗒𝗈𝗇𝖾 𝖡𝗈𝗍𝗌", url="https://t.me/𝖠𝗅𝖼𝗒𝗈𝗇𝖾𝖡𝗈𝗍𝗌"
             ),
         ]
     ]
