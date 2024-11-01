@@ -40,7 +40,7 @@ async def upvote(_, message):
     if not (reply_user and current_user):
         return
     if reply_user.id == OWNER_ID:
-        await message.reply_text("How so pro?")
+        await message.reply_text("𝖧𝗈𝗐 𝗌𝗈 𝖯𝗋𝗈 𝖣𝖺𝖽𝖽𝗒?")
         return
     if reply_user.id == current_user.id:
         return
@@ -53,7 +53,7 @@ async def upvote(_, message):
     new_karma = {"karma": karma}
     await update_karma(chat_id, await int_to_alpha(user_id), new_karma)
     await message.reply_text(
-        f"𝗜𝗻𝗰𝗿𝗲𝗺𝗲𝗻𝘁𝗲𝗱 𝗸𝗮𝗿𝗺𝗮 𝗼𝗳 {user_mention} 𝗯𝘆 1.\n**⭐️ 𝗧𝗢𝗧𝗔𝗟 𝗣𝗢𝗜𝗡𝗧𝗦:** {karma}"
+        f"𝖨𝗇𝖼𝗋𝖾𝗆𝖾𝗇𝗍𝖾𝖽 𝖪𝖺𝗋𝗆𝖺 𝗈𝖿 {user_mention} 𝖻𝗒 1.\n** 𝖳𝗈𝗍𝖺𝗅 𝖯𝗈𝗂𝗇𝗍𝗌:** {karma}"
     )
 
 
@@ -88,7 +88,7 @@ async def downvote(_, message):
     new_karma = {"karma": karma}
     await update_karma(message.chat.id, await int_to_alpha(user_id), new_karma)
     await message.reply_text(
-        f"𝗗𝗲𝗰𝗿𝗲𝗺𝗲𝗻𝘁𝗲𝗱 𝗸𝗮𝗿𝗺𝗮 𝗼𝗳 {user_mention} 𝗯𝘆 1.\n**⭐️ 𝗧𝗢𝗧𝗔𝗟 𝗣𝗢𝗜𝗡𝗧𝗦:** {karma}"
+        f"𝖣𝖾𝖼𝗋𝖾𝗆𝖾𝗇𝗍𝖾𝖽 𝖪𝖺𝗋𝗆𝖺 𝗈𝖿 {user_mention} 𝖻𝗒 1.\n** 𝖳𝗈𝗍𝖺𝗅 𝖯𝗈𝗂𝗇𝗍𝗌:** {karma}"
     )
 
 
@@ -101,7 +101,7 @@ async def karma(_, message):
         if not karma:
             await m.edit_text("No karma in the database for this chat.")
             return
-        msg = f"**🎖 𝗞𝗔𝗥𝗠𝗔 𝗟𝗜𝗦𝗧 𝗢𝗙 {message.chat.title} :**\n"
+        msg = f"**𝖪𝖺𝗋𝗆𝖺 𝖫𝗂𝗌𝗍 𝗈𝖿 {message.chat.title} :**\n"
         limit = 0
         karma_dicc = {}
         for i in karma:
@@ -132,7 +132,7 @@ async def karma(_, message):
         user_id = message.reply_to_message.from_user.id
         karma = await get_karma(message.chat.id, await int_to_alpha(user_id))
         karma = karma["karma"] if karma else 0
-        await message.reply_text(f"**⭐️ 𝗧𝗢𝗧𝗔𝗟 𝗣𝗢𝗜𝗡𝗧𝗦:** {karma}")
+        await message.reply_text(f"**𝖳𝗈𝗍𝖺𝗅 𝖯𝗈𝗂𝗇𝗍𝗌:** {karma}")
 
 
 @app.on_message(filters.command("karma"))
@@ -165,13 +165,13 @@ async def karma_toggle_xd(_, message):
 # <=================================================== HELP ====================================================>
 
 
-__mod_name__ = "KARMA"
+__mod_name__ = "𝖪𝖺𝗋𝗆𝖺"
 __help__ = """
 
-➠ *UPVOTE* - Use upvote keywords like "+", "+1", "thanks", etc. to upvote a message.
-➠ *DOWNVOTE* - Use downvote keywords like "-", "-1", etc. to downvote a message.
+╭• *𝖴𝗉𝗏𝗈𝗍𝖾* - Use upvote keywords like "+", "+1", "thanks", etc. to upvote a message.
+╭• *𝖣𝗈𝗐𝗇𝗏𝗈𝗍𝖾* - Use downvote keywords like "-", "-1", etc. to downvote a message.
 
-➠ *Commands*
+╭• *𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌*
 
 » /karmastat:- `Reply to a user to check that user's karma points`
 
