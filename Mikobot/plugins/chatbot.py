@@ -86,8 +86,8 @@ async def kuki(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = "Choose an option"
     keyboard = InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton(text="Enable", callback_data="add_chat({})")],
-            [InlineKeyboardButton(text="Disable", callback_data="rm_chat({})")],
+            [InlineKeyboardButton(text="𝖤𝗇𝖺𝖻𝗅𝖾", callback_data="add_chat({})")],
+            [InlineKeyboardButton(text="𝖣𝗂𝗌𝖺𝖻𝗅𝖾", callback_data="rm_chat({})")],
         ]
     )
     await message.reply_text(
@@ -152,12 +152,12 @@ async def list_all_chats(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 __help__ = """
-➠ *Admins only command*:
+╭• *𝖠𝖽𝗆𝗂𝗇𝗌 𝖮𝗇𝗅𝗒 𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌*:
 
 » /chatbot: shows chatbot panel.
 """
 
-__mod_name__ = "CHATBOT"
+__mod_name__ = "𝖢𝗁𝖺𝗍𝖻𝗈𝗍"
 
 
 # <================================================ HANDLER =======================================================>
