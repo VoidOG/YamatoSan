@@ -416,9 +416,9 @@ async def anime_command_callback(update: Update, context: ContextTypes.DEFAULT_T
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("𝖬𝗈𝗋𝖾 𝖨𝗇𝖿𝗈", url="https://𝗍.𝗆𝖾/𝖠𝗅𝖼𝗒𝗈𝗇𝖾𝖡𝗈𝗍𝗌"),
+                        InlineKeyboardButton("𝖬𝗈𝗋𝖾 𝖨𝗇𝖿𝗈", url="https://t.me/alcyonebots"),
                         InlineKeyboardButton(
-                            "𝖭𝗑𝗂𝗏𝗆 𝖠𝗇𝗂𝗆𝖾", url="𝗁𝗍𝗍𝗉𝗌://𝗍.𝗆𝖾/𝖭𝗑𝗂𝗏𝗆_𝖭𝖾𝗍𝗐𝗈𝗋𝗄"
+                            "𝖭𝗑𝗂𝗏𝗆 𝖠𝗇𝗂𝗆𝖾", url="https://t.me/Nxivm_Network"
                         ),
                     ],
                     [
