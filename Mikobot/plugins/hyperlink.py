@@ -26,10 +26,10 @@ async def pick_winner(update: Update, context: ContextTypes.DEFAULT_TYPE):
         winner = random.choice(participants)
 
         # Send the winner as a reply
-        await update.message.reply_text(f"🎉 The winner is: {winner}")
+        await update.message.reply_text(f"🎉 𝖳𝗁𝖾 𝗐𝗂𝗇𝗇𝖾𝗋 𝗂𝗌: {winner}")
     else:
         # If no participants are provided
-        await update.message.reply_text("Please provide a list of participants.")
+        await update.message.reply_text("𝖯𝗅𝖾𝖺𝗌𝖾 𝗉𝗋𝗈𝗏𝗂𝖽𝖾 𝖺 𝗅𝗂𝗌𝗍 𝗈𝖿 𝗉𝖺𝗋𝗍𝗂𝖼𝗂𝗉𝖺𝗇𝗍𝗌.")
 
 
 # Define the command handler for the "/hyperlink" command
@@ -53,7 +53,7 @@ async def hyperlink_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
             )
         else:
             await update.message.reply_text(
-                "❌ Invalid format! Please use the format: /hyperlink <text> <link>."
+                "Invalid format! Please use the format: /hyperlink <text> <link>."
             )
 
 
