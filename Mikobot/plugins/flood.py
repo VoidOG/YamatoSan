@@ -84,14 +84,14 @@ async def check_flood(update: Update, context: ContextTypes.DEFAULT_TYPE):
             tag = "TMUTE"
         await send_message(
             update.effective_message,
-            "Beep boop! Boop beep!\n{}!".format(execstrings),
+            "𝖡𝖾𝖾𝗉 𝖻𝗈𝗉 𝖻𝖾𝖾𝗉 𝖻𝗈𝗉!!\n{}!".format(execstrings),
         )
 
         return (
             "<b>{}:</b>"
-            "\n#{}"
-            "\n<b>user:</b> {}"
-            "\nFlooded the group.".format(
+            "\n{}"
+            "\n<b>𝖴𝗌𝖾𝗋:</b> {}"
+            "\n𝖥𝗅𝗈𝗈𝖽𝖾𝖽 𝗍𝗁𝖾 𝗀𝗋𝗈𝗎𝗉.".format(
                 tag,
                 html.escape(chat.title),
                 mention_html(user.id, html.escape(user.first_name)),
@@ -105,7 +105,7 @@ async def check_flood(update: Update, context: ContextTypes.DEFAULT_TYPE):
         sql.set_flood(chat.id, 0)
         return (
             "<b>{}:</b>"
-            "\n#INFO"
+            "\n𝖨𝗇𝖿𝗈"
             "\nDon't have enough permission to restrict users so automatically disabled anti-flood.".format(
                 chat.title,
             )
@@ -133,7 +133,7 @@ async def flood_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 ),
             )
             await update.effective_message.edit_text(
-                f"Unmuted by {mention_html(user.id, html.escape(user.first_name))}.",
+                f"𝖴𝗇𝗆𝗎𝗍𝖾𝖽 𝖻𝗒 {mention_html(user.id, html.escape(user.first_name))}.",
                 parse_mode="HTML",
             )
         except:
@@ -186,8 +186,8 @@ async def set_flood(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     text = await message.reply_text("Antiflood has been disabled.")
                 return (
                     "<b>{}:</b>"
-                    "\n#SETFLOOD"
-                    "\n<b>Admin:</b> {}"
+                    "\n𝖲𝖾𝗍 𝖥𝗅𝗈𝗈𝖽"
+                    "\n<b>𝖠𝖽𝗆𝗂𝗇:</b> {}"
                     "\nDisable Antiflood.".format(
                         html.escape(chat_name),
                         mention_html(user.id, html.escape(user.first_name)),
@@ -359,7 +359,7 @@ Examples of time value: 4m = 4 minutes, 3h = 3 hours, 6d = 6 days, 5w = 5 weeks.
             )
         return (
             "<b>{}:</b>\n"
-            "<b>Admin:</b> {}\n"
+            "<b>𝖠𝖽𝗆𝗂𝗇:</b> {}\n"
             "Has changed antiflood mode. User will {}.".format(
                 settypeflood,
                 html.escape(chat.title),
@@ -410,9 +410,9 @@ def __chat_settings__(chat_id, user_id):
 
 
 __help__ = """
-➠ *Antiflood allows you to take action on users that send more than x messages in a row. Exceeding the set flood will result in restricting that user.*
+╭• *Antiflood allows you to take action on users that send more than x messages in a row. Exceeding the set flood will result in restricting that user.*
 
-➠ *Admin Only*
+╭• *𝖠𝖽𝗆𝗂𝗇 𝖮𝗇𝗅𝗒*
 
 » /flood: Get the current antiflood settings.
 
@@ -421,7 +421,7 @@ __help__ = """
 » /setfloodmode <action type>: Choose which action to take on a user who has been flooding. Options: ban/kick/mute/tban/tmute.
 """
 
-__mod_name__ = "ANTI-FLOOD"
+__mod_name__ = "𝖠𝗇𝗍𝗂 𝖥𝗅𝗈𝗈𝖽"
 
 # <================================================ HANDLER =======================================================>
 FLOOD_BAN_HANDLER = MessageHandler(
