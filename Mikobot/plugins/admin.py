@@ -48,7 +48,7 @@ async def promote(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Click to promote admin.",
+                            text="𝖢𝗅𝗂𝖼𝗄 𝗍𝗈 𝗉𝗋𝗈𝗏𝖾 𝖺𝖽𝗆𝗂𝗇.",
                             callback_data=f"admin_=promote={user_id}",
                         ),
                     ],
@@ -148,7 +148,7 @@ async def fullpromote(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Click to promote admin.",
+                            text="𝖢𝗅𝗂𝖼𝗄 𝗍𝗈 𝗉𝗋𝗈𝗏𝖾 𝖺𝖽𝗆𝗂𝗇.",
                             callback_data=f"admin_=promote={user_id}",
                         ),
                     ],
@@ -220,7 +220,7 @@ async def fullpromote(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     log_message = (
         f"{html.escape(chat.title)}:\n"
-        "#FULLPROMOTED\n"
+        "𝖥𝗎𝗅𝗅 𝖯𝗋𝗈𝗆𝗈𝗍𝖾𝖽\n"
         f"ADMIN: {mention_html(user.id, user.first_name)}\n"
         f"USER: {mention_html(user_member.user.id, user_member.user.first_name)}"
     )
@@ -249,7 +249,7 @@ async def demote(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Click to prove admin.",
+                            text="𝖢𝗅𝗂𝖼𝗄 𝗍𝗈 𝗉𝗋𝗈𝗏𝖾 𝖺𝖽𝗆𝗂𝗇.",
                             callback_data=f"admin_=demote={user_id}",
                         ),
                     ],
@@ -352,7 +352,7 @@ async def set_title(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Click to prove admin.",
+                            text="𝖢𝗅𝗂𝖼𝗄 𝗍𝗈 𝗉𝗋𝗈𝗏𝖾 𝖺𝖽𝗆𝗂𝗇.",
                             callback_data=f"admin_=title={user_id}={title}",
                         ),
                     ],
@@ -449,7 +449,7 @@ async def pin(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
                 [
                     [
                         InlineKeyboardButton(
-                            text="Click to prove admin.",
+                            text="𝖢𝗅𝗂𝖼𝗄 𝗍𝗈 𝗉𝗋𝗈𝗏𝖾 𝖺𝖽𝗆𝗂𝗇.",
                             callback_data=f"admin_=pin={prev_message.message_id}={is_silent}",
                         ),
                     ],
@@ -495,7 +495,7 @@ async def unpin(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Click to prove Admin.",
+                            text="𝖢𝗅𝗂𝖼𝗄 𝗍𝗈 𝗉𝗋𝗈𝗏𝖾 𝖺𝖽𝗆𝗂𝗇.",
                             callback_data=f"admin_=unpin",
                         ),
                     ],
@@ -541,7 +541,7 @@ async def unpinall(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Click to prove admin.",
+                            text="𝖢𝗅𝗂𝖼𝗄 𝗍𝗈 𝗉𝗋𝗈𝗏𝖾 𝖺𝖽𝗆𝗂𝗇.",
                             callback_data=f"admin_=unpinall",
                         ),
                     ],
@@ -625,14 +625,14 @@ async def adminlist(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
     administrators = await bot.get_chat_administrators(chat_id)
     administrators_list = list(administrators)  # Convert to a list
-    text = "「 𝗔𝗗𝗠𝗜𝗡𝗦 𝗜𝗡 <b>{}</b>:".format(html.escape(update.effective_chat.title))
+    text = "𝖠𝖽𝗆𝗂𝗇𝗌 𝗂𝗇 <b>{}</b>:".format(html.escape(update.effective_chat.title))
     bot_admin_list = []
     for admin in administrators_list:
         user = admin.user
         status = admin.status
         custom_title = admin.custom_title
         if user.first_name == "":
-            name = "☠ Deleted Account"
+            name = "Deleted Account"
         else:
             name = "{}".format(
                 mention_html(
@@ -644,11 +644,11 @@ async def adminlist(update: Update, context: ContextTypes.DEFAULT_TYPE):
             administrators_list.remove(admin)
             continue
         if status == "creator":
-            text += "\n\n 👑 <b>Creator:</b>"
-            text += "\n<code> ╰─➽ </code>{}\n".format(name)
+            text += "\n\n <b>𝖮𝗐𝗇𝖾𝗋:</b>"
+            text += "\n<code> ╰─᳃ </code>{}\n".format(name)
             if custom_title:
-                text += f"<code> ┗━ {html.escape(custom_title)}</code>\n"
-    text += "\n🚓 <b>Admins:</b>"
+                text += f"<code> ╰─᳃ {html.escape(custom_title)}</code>\n"
+    text += "\n <b>𝖠𝖽𝗆𝗂𝗇𝗌:</b>"
     custom_admin_list = {}
     normal_admin_list = []
     for admin in administrators_list:
@@ -672,22 +672,22 @@ async def adminlist(update: Update, context: ContextTypes.DEFAULT_TYPE):
             else:
                 normal_admin_list.append(name)
     for admin in normal_admin_list:
-        text += "\n<code> ╰─➽ </code>{}".format(admin)
+        text += "\n<code> ╰─᳃ </code>{}".format(admin)
     for admin_group in custom_admin_list.copy():
         if len(custom_admin_list[admin_group]) == 1:
-            text += "\n<code> ╰─➽ </code>{} | <code>{}</code>".format(
+            text += "\n<code> ╰─᳃ </code>{} | <code>{}</code>".format(
                 custom_admin_list[admin_group][0], html.escape(admin_group)
             )
             custom_admin_list.pop(admin_group)
     text += "\n"
     for admin_group in custom_admin_list:
-        text += "\n🚨 <code>{}</code>".format(admin_group)
+        text += "\n <code>{}</code>".format(admin_group)
         for admin in custom_admin_list[admin_group]:
-            text += "\n<code> ╰─➽ </code>{}".format(admin)
+            text += "\n<code> ╰─᳃ </code>{}".format(admin)
         text += "\n"
     text += "\n🤖 <b>Bots:</b>"
     for each_bot in bot_admin_list:
-        text += "\n<code> ╰─➽ </code>{}".format(each_bot)
+        text += "\n<code> ╰─᳃ </code>{}".format(each_bot)
     try:
         await msg.edit_text(text, parse_mode=ParseMode.HTML)
     except BadRequest:  # if the original message is deleted
@@ -851,7 +851,7 @@ async def admin_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             log_message = (
                 f"<b>{html.escape(chat.title)}:</b>\n"
-                f"#DEMOTE\n"
+                f"DEMOTE\n"
                 f"<b>Admin:</b> {mention_html(admin_user.id, admin_user.first_name)}\n"
                 f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
             )
@@ -981,7 +981,7 @@ async def admin_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             log_message = (
                 f"<b>{html.escape(chat.title)}</b>\n"
-                f"#PINNED\n"
+                f"PINNED\n"
                 f"<b>Admin:</b> {mention_html(admin_user.id, html.escape(admin_user.first_name))}"
             )
 
@@ -1020,7 +1020,7 @@ async def admin_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         log_message = (
             f"<b>{html.escape(chat.title)}:</b>\n"
-            f"#UNPINNED\n"
+            f"UNPINNED\n"
             f"<b>Admin:</b> {mention_html(admin_user.id, html.escape(admin_user.first_name))}"
         )
 
@@ -1052,7 +1052,7 @@ async def admin_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await message.edit_text("Done unpinning all messages.")
         log_message = (
             f"<b>{html.escape(chat.title)}:</b>\n"
-            f"#UNPINNED-ALL\n"
+            f"UNPINNED-ALL\n"
             f"<b>ADMIN:</b> {mention_html(admin_user.id, html.escape(admin_user.first_name))}"
         )
 
@@ -1065,7 +1065,7 @@ async def admin_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 __help__ = """
 » /adminlist: List of admins in the chat.
 
-➠ *Admins only:*
+╭• *𝖠𝖽𝗆𝗂𝗇𝗌 𝖮𝗇𝗅𝗒:*
 
 » /pin: Silently pins the message replied to. Add 'loud' or 'notify' to give notifications to users.
 
@@ -1123,7 +1123,7 @@ function(SET_TITLE_HANDLER)
 function(ADMIN_REFRESH_HANDLER)
 function(ADMIN_CALLBACK_HANDLER)
 
-__mod_name__ = "ADMIN"
+__mod_name__ = "𝖠𝖽𝗆𝗂𝗇"
 __command_list__ = [
     "adminlist",
     "admins",
