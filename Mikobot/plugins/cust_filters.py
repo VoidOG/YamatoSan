@@ -590,7 +590,7 @@ async def rmall_filters(update: Update, context: ContextTypes.DEFAULT_TYPE):
             [
                 [
                     InlineKeyboardButton(
-                        text="STOP ALL FILTERS",
+                        text="𝖲𝗍𝗈𝗉 𝖺𝗅𝗅 𝖥𝗂𝗅𝗍𝖾𝗋𝗌",
                         callback_data="filters_rmall",
                     ),
                 ],
@@ -700,15 +700,15 @@ def __chat_settings__(chat_id, user_id):
 __help__ = """
 » `/filters`*:* List all active filters saved in the chat.
 
-➠ *Admin only:*
+╭• *Admin only:*
 
 » `/filter <keyword> <reply message>`*:* Add a filter to this chat. The bot will now reply that message whenever 'keyword'\
 is mentioned. If you reply to a sticker with a keyword, the bot will reply with that sticker. NOTE: all filter \
 keywords are in lowercase. If you want your keyword to be a sentence, use quotes. eg: /filter "hey there" How you \
 doin?
 
-➠ Separate diff replies by `%%%` to get random replies
-➠ *Example:*
+╭• Separate diff replies by `%%%` to get random replies
+╭• *𝖤𝗑𝖺𝗆𝗉𝗅𝖾:*
 
 » `/filter "filtername"
  Reply 1
@@ -719,14 +719,14 @@ doin?
 
 » `/stop <filter keyword>`*:* Stop that filter.
 
-➠ *Chat creator only:*
+╭• *𝖢𝗁𝖺𝗍 𝖼𝗋𝖾𝖺𝗍𝗈𝗋 𝖮𝗇𝗅𝗒:*
 » `/removeallfilters`*:* Remove all chat filters at once.
 
-➠ *Note*: Filters also support markdown formatters like: {first}, {last} etc.. and buttons.
-➠ Now Supports media spoilers too, and media caption.
+╭• *𝖭𝗈𝗍𝖾*: Filters also support markdown formatters like: {first}, {last} etc.. and buttons.
+╭• Now Supports media spoilers too, and media caption.
 """
 
-__mod_name__ = "FILTERS"
+__mod_name__ = "𝖥𝗂𝗅𝗍𝖾𝗍𝗌"
 
 # <================================================ HANDLER =======================================================>
 FILTER_HANDLER = CommandHandler("filter", filters, block=False)
