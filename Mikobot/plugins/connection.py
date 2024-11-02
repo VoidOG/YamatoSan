@@ -155,11 +155,11 @@ async def connect_chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
             if gethistory:
                 buttons = [
                     InlineKeyboardButton(
-                        text="❎ Close Button",
+                        text="𝖢𝗅𝗈𝗌𝖾 𝖡𝗎𝗍𝗍𝗈𝗇 ",
                         callback_data="connect_close",
                     ),
                     InlineKeyboardButton(
-                        text="🧹 Clear History",
+                        text=" 𝖢𝗅𝖾𝖺𝗋 𝖧𝗂𝗌𝗍𝗈𝗋𝗒 ",
                         callback_data="connect_clear",
                     ),
                 ]
@@ -174,26 +174,26 @@ async def connect_chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 )
                 buttons.append(
                     InlineKeyboardButton(
-                        text="🔌 Disconnect",
+                        text=" 𝖣𝗂𝗌𝖼𝗈𝗇𝗇𝖾𝖼𝗍",
                         callback_data="connect_disconnect",
                     ),
                 )
             else:
                 text = "Write the chat ID or tag to connect!"
             if gethistory:
-                text += "\n\n*Connection History:*\n"
-                text += "╒═══「 *Info* 」\n"
-                text += "│  Sorted: `Newest`\n"
-                text += "│\n"
+                text += "\n\n*𝖢𝗈𝗇𝗇𝖾𝖼𝗍𝗂𝗈𝗇 𝖧𝗂𝗌𝗍𝗈𝗋𝗒:*\n"
+                text += "*𝖨𝗇𝖿𝗈*\n"
+                text += "Sorted: `𝖭𝖾𝗐𝖾𝗌𝗍`\n"
+                text += "\n"
                 buttons = [buttons]
                 for x in sorted(gethistory.keys(), reverse=True):
                     htime = time.strftime("%d/%m/%Y", time.localtime(x))
-                    text += "╞═「 *{}* 」\n│   `{}`\n│   `{}`\n".format(
+                    text += " *{}* 」\n│   `{}`\n   `{}`\n".format(
                         gethistory[x]["chat_name"],
                         gethistory[x]["chat_id"],
                         htime,
                     )
-                    text += "│\n"
+                    text += "\n"
                     buttons.append(
                         [
                             InlineKeyboardButton(
@@ -204,7 +204,7 @@ async def connect_chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
                             ),
                         ],
                     )
-                text += "╘══「 Total {} Chats 」".format(
+                text += " 𝖳𝗈𝗍𝖺𝗅 {} 𝖢𝗁𝖺𝗍𝗌 ".format(
                     (
                         str(len(gethistory)) + " (max)"
                         if len(gethistory) == 5
@@ -258,7 +258,7 @@ async def connect_chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 except Forbidden:
                     pass
             else:
-                await send_message(update.effective_message, "ᴄᴏɴɴᴇᴄᴛɪᴏɴ ғᴀɪʟᴇᴅ!")
+                await send_message(update.effective_message, "𝖢𝗈𝗇𝗇𝖾𝖼𝗍𝗂𝗈𝗇 𝖥𝖺𝗂𝗅𝖾𝖽!")
         else:
             await send_message(
                 update.effective_message,
@@ -415,10 +415,10 @@ async def connect_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 # <=================================================== HELP ====================================================>
-__mod_name__ = "CONNECT"
+__mod_name__ = "𝖢𝗈𝗇𝗇𝖾𝖼𝗍"
 
 __help__ = """
-➠ *Sometimes, you just want to add some notes and filters to a group chat, but you don't want everyone to see; this is where connections come in. This allows you to connect to a chat's database and add things to it without the commands appearing in chat! For obvious reasons, you need to be an admin to add things, but any member in the group can view your data.*
+╭• *Sometimes, you just want to add some notes and filters to a group chat, but you don't want everyone to see; this is where connections come in. This allows you to connect to a chat's database and add things to it without the commands appearing in chat! For obvious reasons, you need to be an admin to add things, but any member in the group can view your data.*
 
 » /connect: Connects to chat (can be done in a group by /connect or /connect <chat id> in PM)
 
@@ -428,7 +428,7 @@ __help__ = """
 
 » /helpconnect: List available commands that can be used remotely
 
-➠ *Admin Only:*
+╭• *𝖠𝖽𝗆𝗂𝗇 𝖮𝗇𝗅𝗒:*
 
 » /allowconnect <yes/no>: Allow a user to connect to a chat
 """
