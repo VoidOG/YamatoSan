@@ -86,14 +86,14 @@ async def detect_nsfw(_, message):
         return
     await message.reply_text(
         f"""
-**🔞 NSFW Image Detected & Deleted Successfully!**
+** NSFW Image Detected & Deleted Successfully!**
 
-**✪ User:** {message.from_user.mention} [`{message.from_user.id}`]
-**✪ Safe:** `{results.neutral} %`
-**✪ Porn:** `{results.porn} %`
-**✪ Adult:** `{results.sexy} %`
-**✪ Hentai:** `{results.hentai} %`
-**✪ Drawings:** `{results.drawings} %`
+**✪ 𝖴𝗌𝖾𝗋:** {message.from_user.mention} [`{message.from_user.id}`]
+**✪ 𝖲𝖺𝖿𝖾:** `{results.neutral} %`
+**✪ 𝖯𝗈𝗋𝗇:** `{results.porn} %`
+**✪ 𝖠𝖽𝗎𝗅𝗍:** `{results.sexy} %`
+**✪ 𝖧𝖾𝗇𝗍𝖺𝗂:** `{results.hentai} %`
+**✪ 𝖣𝗋𝖺𝗐𝗂𝗇𝗀𝗌:** `{results.drawings} %`
 """
     )
 
@@ -133,12 +133,12 @@ async def nsfw_scan_command(_, message):
     results = results.result
     await m.edit(
         f"""
-**➢ Neutral:** `{results.neutral} %`
-**➢ Porn:** `{results.porn} %`
-**➢ Hentai:** `{results.hentai} %`
-**➢ Sexy:** `{results.sexy} %`
-**➢ Drawings:** `{results.drawings} %`
-**➢ NSFW:** `{results.is_nsfw}`
+**➢ 𝖭𝖾𝗎𝗍𝗋𝖺𝗅:** `{results.neutral} %`
+**➢ 𝖯𝗈𝗋𝗇:** `{results.porn} %`
+**➢ 𝖧𝖾𝗇𝗍𝖺𝗂:** `{results.hentai} %`
+**➢ 𝖲𝖾𝗑𝗒:** `{results.sexy} %`
+**➢ 𝖣𝗋𝖺𝗐𝗂𝗇𝗀𝗌:** `{results.drawings} %`
+**➢ 𝖭𝖲𝖥𝖶:** `{results.is_nsfw}`
 """
     )
 
@@ -175,12 +175,12 @@ async def nsfw_enable_disable(_, message):
 # <=================================================== HELP ====================================================>
 
 
-__mod_name__ = "ANTI-NSFW"
+__mod_name__ = "𝖠𝗇𝗍𝗂-𝖭𝗌𝖿𝗐"
 
 __help__ = """
-*🔞 Helps in detecting NSFW material and removing it*.
+* Helps in detecting NSFW material and removing it*.
 
-➠ *Usage:*
+╭• *Usage:*
 
 » /antinsfw [on/off]: Enables Anti-NSFW system.
 
