@@ -57,11 +57,11 @@ async def force_subscribe(event):
     if event.is_group:
         perm = await event.client.get_permissions(event.chat_id, event.sender_id)
         if not perm.is_admin:
-            return await event.reply("You need to be an admin to do this.")
+            return await event.reply("𝖸𝗈𝗎 𝗇𝖾𝖾𝖽 𝗍𝗈 𝖻𝖾 𝖺𝗇 𝖺𝖽𝗆𝗂𝗇 𝗍𝗈 𝖽𝗈 𝗍𝗁𝗂𝗌")
 
         if not perm.is_creator:
             return await event.reply(
-                "❗ Group creator required\nYou have to be the group creator to do that."
+                "𝖦𝗋𝗈𝗎𝗉 𝖼𝗋𝖾𝖺𝗍𝗈𝗋 𝗂𝗌 𝗋𝖾𝗊𝗎𝗂𝗋𝖾𝖽\n𝖸𝗈𝗎 𝗁𝖺𝗏𝖾 𝗍𝗈 𝖻𝖾 𝗍𝗁𝖾 𝗀𝗋𝗈𝗎𝗉 𝖼𝗋𝖾𝖺𝗍𝗈𝗋 𝗍𝗈 𝖽𝗈 𝗍𝗁𝗂𝗌."
             )
 
     try:
@@ -126,8 +126,8 @@ async def force_subscribe_new_message(e):
 
     if not check:
         buttons = [
-            Button.url("Join Channel", f"t.me/{channel}"),
-            Button.inline("Unmute Me", data=f"fs_{e.sender_id}"),
+            Button.url("𝖩𝗈𝗂𝗇 𝖢𝗁𝖺𝗇𝗇𝖾𝗅", f"t.me/{channel}"),
+            Button.inline("𝖴𝗇𝗆𝗎𝗍𝖾 𝗆𝖾", data=f"fs_{e.sender_id}"),
         ]
 
         txt = f'<b><a href="tg://user?id={e.sender_id}">{e.sender.first_name}</a></b>, you have <b>not subscribed</b> to our <b><a href="t.me/{channel}">channel</a></b> yet. Please <b><a href="t.me/{channel}">join</a></b> and press the button below to unmute yourself.'
@@ -168,22 +168,22 @@ async def unmute_force_subscribe(event):
 
 
 __help__ = """
-➠ *Dazai has the capability to hush members who haven't yet subscribed to your channel until they decide to hit that subscribe button.*
-➠ *When activated, I'll silence those who are not subscribed and provide them with an option to unmute. Once they click the button, I'll lift the mute.*
+╭• *𝖸𝖺𝗆𝖺𝗍𝗈 has the capability to hush members who haven't yet subscribed to your channel until they decide to hit that subscribe button.*
+╭• *When activated, I'll silence those who are not subscribed and provide them with an option to unmute. Once they click the button, I'll lift the mute.*
 
-➠ Configuration Process
-➠ Exclusively for Creators
-➠ Grant me admin privileges in your group
-➠ Designate me as an admin in your channel
+╭• Configuration Process
+╭• Exclusively for Creators
+╭• Grant me admin privileges in your group
+╭• Designate me as an admin in your channel
 
-➠ *Commands*
-» /fsub channel\_username - to initiate and customize settings for the channel.
+╭• *𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌*
+» /fsub 𝖼𝗁𝖺𝗇𝗇𝖾𝗅_𝗎𝗌𝖾𝗋𝗇𝖺𝗆𝖾 - to initiate and customize settings for the channel.
 
-➠ *Kick things off with...*
+╭• *𝖪𝗂𝖼𝗄 𝗍𝗁𝗂𝗇𝗀𝗌 𝗈𝖿𝖿 𝗐𝗂𝗍𝗁*
 » /fsub - to review the current settings.
 » /fsub off - to deactivate the force subscription feature.
 
-➠ *If you disable fsub, you'll need to set it up again for it to take effect. Utilize /fsub channel\_username.*
+╭• *If you disable fsub, you'll need to set it up again for it to take effect. Utilize /fsub channel\_username.*
 """
-__mod_name__ = "F-SUB"
+__mod_name__ = "𝖥𝗈𝗋𝖼𝖾𝖲𝗎𝖻"
 # <================================================ END =======================================================>
