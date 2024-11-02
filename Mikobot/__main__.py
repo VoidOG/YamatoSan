@@ -623,7 +623,7 @@ async def gitsource_callback(update: Update, context: ContextTypes.DEFAULT_TYPE)
         )
 
 
-async def 𝖻𝗈𝗍𝗌(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def bots(update: Update, context: ContextTypes.DEFAULT_TYPE):
     source_link = "𝗁𝗍𝗍𝗉𝗌://𝗍.𝗆𝖾/𝖺𝗅𝖼𝗒𝗈𝗇𝖾𝖻𝗈𝗍𝗌"
     message_text = f"*𝖢𝗁𝖾𝖼𝗄 𝗈𝗎𝗍 𝗈𝗎𝗋 𝗈𝗍𝗁𝖾𝗋 𝖻𝗈𝗍𝗌 𝗁𝖾𝗋𝖾*:\n\n{source_link}"
 
@@ -955,7 +955,7 @@ def main():
 
     function(CommandHandler("settings", get_settings))
     function(CallbackQueryHandler(settings_button, pattern=r"stngs_"))
-    function(CommandHandler("𝖻𝗈𝗍𝗌", 𝖻𝗈𝗍𝗌))
+    function(CommandHandler("bots", bots))
 
     function(CallbackQueryHandler(Miko_about_callback, pattern=r"Miko_"))
     function(CallbackQueryHandler(gitsource_callback, pattern=r"git_source"))
