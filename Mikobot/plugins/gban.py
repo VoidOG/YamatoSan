@@ -223,7 +223,7 @@ async def gban(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if EVENT_LOGS:
         await log.edit_text(
-            log_message + f"\n<b>Chats affected:</b> <code>{gbanned_chats}</code>",
+            log_message + f"\n<b>𝖢𝗁𝖺𝗍𝗌 𝖺𝖿𝖿𝖾𝖼𝗍𝖾𝖽:</b> <code>{gbanned_chats}</code>",
             parse_mode=ParseMode.HTML,
         )
     else:
@@ -295,12 +295,12 @@ async def ungban(update: Update, context: ContextTypes.DEFAULT_TYPE):
         chat_origin = f"<b>{chat.id}</b>\n"
 
     log_message = (
-        f"#UNGBANNED\n"
-        f"<b>Originated from:</b> <code>{chat_origin}</code>\n"
-        f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
-        f"<b>Unbanned User:</b> {mention_html(user_chat.id, user_chat.first_name)}\n"
-        f"<b>Unbanned User ID:</b> <code>{user_chat.id}</code>\n"
-        f"<b>Event Stamp:</b> <code>{current_time}</code>"
+        f"𝖴𝗇𝗀𝖺𝗇𝗇𝖾𝖽\n"
+        f"<b>𝖥𝗋𝗈𝗆 𝖢𝗁𝖺𝗍:</b> <code>{chat_origin}</code>\n"
+        f"<b>𝖠𝖽𝗆𝗂𝗇:</b> {mention_html(user.id, user.first_name)}\n"
+        f"<b>𝖴𝗇𝗀𝖻𝖺𝗇𝗇𝖾𝖽 𝖴𝗌𝖾𝗋:</b> {mention_html(user_chat.id, user_chat.first_name)}\n"
+        f"<b>𝖴𝗇𝗀𝖻𝖺𝗇𝗇𝖾𝖽 𝖴𝗌𝖾𝗋 𝖨𝖣:</b> <code>{user_chat.id}</code>\n"
+        f"<b>𝖤𝗏𝖾𝗇𝗍 𝖲𝗍𝖺𝗆𝗉:</b> <code>{current_time}</code>"
     )
 
     if EVENT_LOGS:
@@ -403,10 +403,10 @@ async def check_and_ban(update, user_id, should_message=True):
         await update.effective_chat.ban_member(user_id)
         if should_message:
             text = (
-                f"<b>Alert</b>: this user is globally banned.\n"
+                f"<b>𝖠𝗅𝖾𝗋𝗍</b>: 𝖳𝗁𝗂𝗌 𝗎𝗌𝖾𝗋 𝗂𝗌 𝗀𝗅𝗈𝖻𝖺𝗅𝗅𝗒 𝖻𝖺𝗇𝗇𝖾𝖽.\n"
                 f"<code>*bans them from here*</code>.\n"
-                f"<b>Appeal chat</b>: @{SUPPORT_CHAT}\n"
-                f"<b>User ID</b>: <code>{user_id}</code>"
+                f"<b>𝖠𝗉𝗉𝖾𝖺𝗅 𝖢𝗁𝖺𝗍</b>: @{SUPPORT_CHAT}\n"
+                f"<b>𝖴𝗌𝖾𝗋 𝖨𝖣</b>: <code>{user_id}</code>"
             )
             user = sql.get_gbanned_user(user_id)
             if user.reason:
@@ -454,8 +454,8 @@ async def gbanstat(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if args[0].lower() in ["on", "yes"]:
             sql.enable_gbans(update.effective_chat.id)
             await update.effective_message.reply_text(
-                "Antispam is now enabled ✅ "
-                "I am now protecting your group from potential remote threats!",
+                "𝖠𝗇𝗍𝗂𝗌𝗉𝖺𝗆 𝗂𝗌 𝖾𝗇𝖺𝖻𝗅𝖾𝖽 𝗇𝗈𝗐"
+                "𝖨 𝖺𝗆 𝗇𝗈𝗐 𝗉𝗋𝗈𝗍𝖾𝖼𝗍𝗂𝗇𝗀 𝗒𝗈𝗎𝗋 𝗀𝗋𝗈𝗎𝗉 𝖿𝗋𝗈𝗆 𝗉𝗈𝗍𝖾𝗇𝗍𝗂𝖺𝗅 𝗋𝖾𝗆𝗈𝗍𝖾 𝗍𝗁𝗋𝖾𝖺𝗍𝗌!",
             )
         elif args[0].lower() in ["off", "no"]:
             sql.disable_gbans(update.effective_chat.id)
@@ -489,8 +489,8 @@ def __user_info__(user_id):
         text = text.format("Yes")
         user = sql.get_gbanned_user(user_id)
         if user.reason:
-            text += f"\n<b>Reason:</b> <code>{html.escape(user.reason)}</code>"
-        text += f"\n<b>Appeal Chat:</b> @{SUPPORT_CHAT}"
+            text += f"\n<b>𝖱𝖾𝖺𝗌𝗈𝗇:</b> <code>{html.escape(user.reason)}</code>"
+        text += f"\n<b>𝖠𝗉𝗉𝖾𝖺𝗅 𝖢𝗁𝖺𝗍:</b> @{SUPPORT_CHAT}"
     else:
         text = text.format("???")
     return text
@@ -508,13 +508,13 @@ def __chat_settings__(chat_id, user_id):
 
 
 __help__ = f"""
-➠ *Admins only:*
+╭• *𝖠𝖽𝗆𝗂𝗇 𝖮𝗇𝗅𝗒:*
 
 » /antispam <on/off/yes/no>: Will toggle our antispam tech or return your current settings.
 
-➠ Anti-Spam, used by bot devs to ban spammers across all groups. This helps protect \
+╭• Anti-Spam, used by bot devs to ban spammers across all groups. This helps protect \𝗇
 you and your groups by removing spam flooders as quickly as possible.
-➠ *Note:* Users can appeal gbans or report spammers at @hydraX2support
+╭• *𝖭𝗈𝗍𝖾:* Users can appeal gbans or report spammers at @hydraX2support
 """
 
 # <================================================ HANDLER =======================================================>
@@ -535,7 +535,7 @@ function(UNGBAN_HANDLER)
 function(GBAN_LIST)
 function(GBAN_STATUS)
 
-__mod_name__ = "ANTI-SPAM"
+__mod_name__ = "𝖠𝗇𝗍𝗂 𝖲𝗉𝖺𝗆"
 __handlers__ = [GBAN_HANDLER, UNGBAN_HANDLER, GBAN_LIST, GBAN_STATUS]
 
 if STRICT_GBAN:  # enforce GBANS if this is set
