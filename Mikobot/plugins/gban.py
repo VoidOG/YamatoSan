@@ -154,19 +154,19 @@ async def gban(update: Update, context: ContextTypes.DEFAULT_TYPE):
         chat_origin = "<b>{}</b>\n".format(chat.id)
 
     log_message = (
-        f"#GBANNED\n"
-        f"<b>Originated from:</b> <code>{chat_origin}</code>\n"
-        f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
-        f"<b>Banned User:</b> {mention_html(user_chat.id, user_chat.first_name)}\n"
-        f"<b>Banned User ID:</b> <code>{user_chat.id}</code>\n"
-        f"<b>Event Stamp:</b> <code>{current_time}</code>"
+        f"𝖦𝖻𝖺𝗇𝗇𝖾𝖽\n"
+        f"<b>𝖮𝗋𝗂𝗀𝗂𝗇𝖺𝗍𝖾𝖽 𝖿𝗋𝗈𝗆:</b> <code>{chat_origin}</code>\n"
+        f"<b>𝖠𝖽𝗆𝗂𝗇:</b> {mention_html(user.id, user.first_name)}\n"
+        f"<b>𝖡𝖺𝗇𝗇𝖾𝖽 𝖴𝗌𝖾𝗋:</b> {mention_html(user_chat.id, user_chat.first_name)}\n"
+        f"<b>𝖡𝖺𝗇𝗇𝖾𝖽 𝖴𝗌𝖾𝗋 𝖨𝖣:</b> <code>{user_chat.id}</code>\n"
+        f"<b>𝖤𝗏𝖾𝗇𝗍 𝖲𝗍𝖺𝗆𝗉:</b> <code>{current_time}</code>"
     )
 
     if reason:
         if chat.type == chat.SUPERGROUP and chat.username:
-            log_message += f'\n<b>Reason:</b> <a href="https://telegram.me/{chat.username}/{message.message_id}">{reason}</a>'
+            log_message += f'\n<b>𝖱𝖾𝖺𝗌𝗈𝗇:</b> <a href="https://telegram.me/{chat.username}/{message.message_id}">{reason}</a>'
         else:
-            log_message += f"\n<b>Reason:</b> <code>{reason}</code>"
+            log_message += f"\n<b>𝖱𝖾𝖺𝗌𝗈𝗇:</b> <code>{reason}</code>"
 
     if EVENT_LOGS:
         try:
@@ -230,7 +230,7 @@ async def gban(update: Update, context: ContextTypes.DEFAULT_TYPE):
         send_to_list(
             bot,
             DRAGONS,
-            f"Gban complete! (User banned in <code>{gbanned_chats}</code> chats)",
+            f"𝖦𝖻𝖺𝗇 𝖼𝗈𝗆𝗉𝗅𝖾𝗍𝖾! (𝖴𝗌𝖾𝗋 𝗀𝖻𝖺𝗇𝗇𝖾𝖽 𝗂𝗇 <code>{gbanned_chats}</code> 𝖼𝗁𝖺𝗍𝗌)",
             html=True,
         )
 
@@ -239,15 +239,15 @@ async def gban(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if gban_time > 60:
         gban_time = round((gban_time / 60), 2)
-        await message.reply_text("Done! Gbanned.", parse_mode=ParseMode.HTML)
+        await message.reply_text("𝖣𝗈𝗇𝖾! 𝖦𝖻𝖺𝗇𝗇𝖾𝖽.", parse_mode=ParseMode.HTML)
     else:
-        await message.reply_text("Done! Gbanned.", parse_mode=ParseMode.HTML)
+        await message.reply_text("𝖣𝗈𝗇𝖾! 𝖦𝖻𝖺𝗇𝗇𝖾𝖽.", parse_mode=ParseMode.HTML)
 
     try:
         await bot.send_message(
             user_id,
-            "#EVENT"
-            "You have been marked as Malicious and as such have been banned from any future groups we manage."
+            "𝖤𝗏𝖾𝗇𝗍"
+            "𝖸𝗈𝗎 𝗁𝖺𝗏𝖾 𝖻𝖾𝖾𝗇 𝗆𝖺𝗋𝗄𝖾𝖽 𝖺𝗌 𝗆𝖺𝗅𝗂𝖼𝗂𝗈𝗎𝗌 𝖺𝗇𝖽 𝖺𝗌 𝗌𝗎𝖼𝗁 𝗁𝖺𝗏𝖾 𝖻𝖾𝖾𝗇 been 𝖻𝖺𝗇𝗇𝖾𝖽 𝖿𝗋𝗈𝗆 𝖺𝗇𝗒 𝖿𝗎𝗍𝗎𝗋𝖾 𝗀𝗋𝗈𝗎𝗉𝗌 𝗐𝖾 𝗆𝖺𝗇𝖺𝗀𝖾𝖽."
             f"\n<b>Reason:</b> <code>{html.escape(user.reason)}</code>"
             f"</b>Appeal Chat:</b> @{SUPPORT_CHAT}",
             parse_mode=ParseMode.HTML,
