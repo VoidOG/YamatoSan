@@ -208,7 +208,7 @@ async def warn_user(update: Update, context: ContextTypes.DEFAULT_TYPE) -> str:
             member = await chat.get_member(user_id)
             return await warn(member.user, chat, reason, message, warner)
     else:
-        await message.reply_text("𝖳𝗁𝖺𝗍 𝗅𝗈𝗈𝗄𝗌 𝗂𝗇𝗏𝖺𝗅𝗂𝖽 𝗎𝗌𝖾𝗋 𝗂𝖽 𝗍𝗈 𝗆𝖾!!)
+        await message.reply_text("𝖳𝗁𝖺𝗍 𝗅𝗈𝗈𝗄𝗌 𝗂𝗇𝗏𝖺𝗅𝗂𝖽 𝗎𝗌𝖾𝗋 𝗂𝖽 𝗍𝗈 𝗆𝖾!!")
     return ""
 
 
