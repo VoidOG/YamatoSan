@@ -10,8 +10,8 @@ LANGUAGES = ["English", "Japanese", "French"]
 @loggable
 async def anime(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Replace with your image URL and caption
-    image_url = "https://yourimageurl.com/image.jpg"  # URL of the image
-    caption_text = "Here's an anime image for you!"  # Caption text for the image
+    image_url = "https://i.ibb.co/VJcX8Qk/file-1039.jpg"  # URL of the image
+    caption_text = "Reserved for something special!"  # Caption text for the image
 
     # Sending the image with the caption
     await update.message.reply_photo(
