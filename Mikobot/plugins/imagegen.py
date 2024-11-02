@@ -35,7 +35,7 @@ class AsyncClient:
             ) as resp:
                 return await resp.json()
         except Exception as e:
-            print(f"Request failed: {str(e)}")
+            print(f"𝖱𝖾𝗊𝗎𝖾𝗌𝗍 𝖿𝖺𝗂𝗅𝖾𝖽: {str(e)}")
 
     async def get_images(self, task_id, request_id):
         data = {"task_id": task_id, "request_id": request_id}
@@ -51,14 +51,14 @@ class AsyncClient:
 async def generate_image_handler(event, model_id):
     command_parts = event.text.split(" ", 1)
     if len(command_parts) < 2:
-        await event.reply("Please provide a prompt.")
+        await event.reply("𝖯𝖾𝖺𝗌𝖾 𝗉𝗋𝗈𝗏𝗂𝖽𝖾 𝖺 𝗉𝗋𝗈𝗆𝗉𝗍.")
         return
 
     prompt = command_parts[1]
     negative_prompt = ""
 
     # Send the initial "Generating your image, wait sometime" message
-    reply_message = await event.reply("Generating your image, please wait...")
+    reply_message = await event.reply("𝖦𝖾𝗇𝖾𝗋𝖺𝗍𝗂𝗇𝗀 𝗒𝗈𝗎𝗋 𝗂𝗆𝖺𝗀𝖾, 𝖯𝗅𝖾𝖺𝗌𝖾 𝗐𝖺𝗂𝗍....")
 
     client = AsyncClient()
     response = await client.generate(model_id, prompt, negative_prompt)
@@ -83,7 +83,7 @@ async def generate_image_handler(event, model_id):
         # Optionally, you can add a timeout to avoid an infinite loop
         timeout_seconds = 600  # 10 minutes (adjust as needed)
         if timeout_seconds <= 0:
-            await reply_message.edit("Image generation timed out.")
+            await reply_message.edit("𝖨𝗆𝖺𝗀𝖾 𝗀𝖾𝗇𝖾𝗋𝖺𝗍𝗂𝗈𝗇 𝗍𝗂𝗆𝖾 𝗈𝗎𝗍")
             break
 
         timeout_seconds -= 5  # Decrement timeout by 5 seconds
