@@ -355,7 +355,7 @@ if is_module_loaded(FILENAME):
     __help__ = """
 » /cmds: Check the current status of disabled commands
 
-➠ *Admins only*:
+╭• *𝖠𝖽𝗆𝗂𝗇𝗌 𝖮𝗇𝗅𝗒*:
 
 » /enable < cmd name >: Enable that command.
 
@@ -368,7 +368,7 @@ if is_module_loaded(FILENAME):
 » /listcmds: List all possible toggleable commands.
     """
 
-    __mod_name__ = "DISABLE"
+    __mod_name__ = "𝖣𝗂𝗌𝖺𝖻𝗅𝖾"
 
 else:
     DisableAbleCommandHandler = CommandHandler
