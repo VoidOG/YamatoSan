@@ -60,7 +60,7 @@ async def ban(update: Update, context: ContextTypes.DEFAULT_TYPE) -> str:
                 [
                     [
                         InlineKeyboardButton(
-                            text="Click to prove Admin.",
+                            text="𝖢𝗅𝗂𝖼𝗄 𝗍𝗈 𝗉𝗋𝗈𝗏𝖾 𝖺𝖽𝗆𝗂𝗇.",
                             callback_data=f"bans_{chat.id}=ban={user_id}={reason}={chat_title}",
                         ),
                     ],
@@ -128,22 +128,22 @@ async def ban(update: Update, context: ContextTypes.DEFAULT_TYPE) -> str:
 
     log = (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        f"#{'S' if silent else ''}BANNED\n"
-        f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+        f"{'S' if silent else ''}𝖡𝖺𝗇𝗇𝖾𝖽\n"
+        f"<b>𝖠𝖽𝗆𝗂𝗇:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
     )
 
-    reply = f"<code>❕</code><b>Ban Event</b>\n"
+    reply = f"<code>❕</code><b>𝖡𝖺𝗇 𝖤𝗏𝖾𝗇𝗍</b>\n"
 
     if CHAT_SENDER:
-        log += f"<b>Channel:</b> {mention_username(chat_sender.username, html.escape(chat_sender.title))}"
-        reply += f"<code> </code><b>•  Channel:</b> {mention_username(chat_sender.username, html.escape(chat_sender.title))}"
+        log += f"<b>𝖢𝗁𝖺𝗇𝗇𝖾𝗅:</b> {mention_username(chat_sender.username, html.escape(chat_sender.title))}"
+        reply += f"<code> </code><b>•  𝖢𝗁𝖺𝗇𝗇𝖾𝗅:</b> {mention_username(chat_sender.username, html.escape(chat_sender.title))}"
 
     else:
-        log += f"<b>User:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
-        reply += f"<code> </code><b>•  User:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
+        log += f"<b>𝖴𝗌𝖾𝗋:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
+        reply += f"<code> </code><b>•  𝖴𝗌𝖾𝗋:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
 
     if reason:
-        log += "\n<b>Reason:</b> {}".format(reason)
+        log += "\n<b>𝖱𝖾𝖺𝗌𝗈𝗇:</b> {}".format(reason)
 
     try:
         if CHAT_SENDER:
@@ -164,7 +164,7 @@ async def ban(update: Update, context: ContextTypes.DEFAULT_TYPE) -> str:
         )  # banhammer marie sticker
 
         if reason:
-            reply += f"\n<code> </code><b>•  Reason:</b> \n{html.escape(reason)}"
+            reply += f"\n<code> </code><b>•  𝖱𝖾𝖺𝗌𝗈𝗇:</b> \n{html.escape(reason)}"
         await bot.sendMessage(
             chat.id,
             reply,
@@ -178,7 +178,7 @@ async def ban(update: Update, context: ContextTypes.DEFAULT_TYPE) -> str:
             # Do not reply
             if silent:
                 return log
-            await message.reply_text("Banned!", quote=False)
+            await message.reply_text("𝖡𝖺𝗇𝗇𝖾𝖽!", quote=False)
             return log
         else:
             LOGGER.warning(update)
@@ -239,10 +239,10 @@ async def temp_ban(update: Update, context: ContextTypes.DEFAULT_TYPE) -> str:
 
     log = (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        "#TEMP BANNED\n"
-        f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
-        f"<b>User:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}\n"
-        f"<b>Time:</b> {time_val}"
+        "𝖳𝖾𝗆𝗉𝗈𝗋𝖺𝗋𝗒 𝖡𝖺𝗇𝗇𝖾𝖽\n"
+        f"<b>𝖠𝖽𝗆𝗂𝗇:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+        f"<b>𝖴𝗌𝖾𝗋:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}\n"
+        f"<b>𝖳𝗂𝗆𝖾:</b> {time_val}"
     )
     if reason:
         log += "\n<b>Reason:</b> {}".format(reason)
@@ -256,8 +256,8 @@ async def temp_ban(update: Update, context: ContextTypes.DEFAULT_TYPE) -> str:
         )  # banhammer marie sticker
         await bot.sendMessage(
             chat.id,
-            f"Banned! User {mention_html(member.user.id, html.escape(member.user.first_name))} "
-            f"will be banned for {time_val}.",
+            f"𝖡𝖺𝗇𝗇𝖾𝖽! 𝖴𝗌𝖾𝗋 {mention_html(member.user.id, html.escape(member.user.first_name))} "
+            f"𝗐𝗂𝗅𝗅 𝖻𝖾 𝖻𝖺𝗇𝗇𝖾𝖽 𝖿𝗈𝗋 {time_val}.",
             parse_mode=ParseMode.HTML,
             message_thread_id=message.message_thread_id if chat.is_forum else None,
         )
@@ -267,7 +267,7 @@ async def temp_ban(update: Update, context: ContextTypes.DEFAULT_TYPE) -> str:
         if excp.message == "Reply message not found":
             # Do not reply
             await message.reply_text(
-                f"Banned! User will be banned for {time_val}.",
+                f"𝖡𝖺𝗇𝗇𝖾𝖽! 𝗎𝗌𝖾𝗋 𝗐𝗂𝗅𝗅 𝖻𝖾 𝖻𝖺𝗇𝗇𝖾𝖽 𝖿𝗈𝗋 {time_val}.",
                 quote=False,
             )
             return log
@@ -325,13 +325,13 @@ async def kick(update: Update, context: ContextTypes.DEFAULT_TYPE) -> str:
         )  # banhammer marie sticker
         await bot.sendMessage(
             chat.id,
-            f"Capitain I have kicked, {mention_html(member.user.id, html.escape(member.user.first_name))}.",
+            f"Captain I have kicked, {mention_html(member.user.id, html.escape(member.user.first_name))}.",
             parse_mode=ParseMode.HTML,
             message_thread_id=message.message_thread_id if chat.is_forum else None,
         )
         log = (
             f"<b>{html.escape(chat.title)}:</b>\n"
-            f"#KICKED\n"
+            f"𝖪𝗂𝖼𝗄𝖾𝖽\n"
             f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
             f"<b>User:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
         )
@@ -390,7 +390,7 @@ async def unban(update: Update, context: ContextTypes.DEFAULT_TYPE) -> str:
                 [
                     [
                         InlineKeyboardButton(
-                            text="Click to prove Admin.",
+                            text="𝖢𝗅𝗂𝖼𝗄 𝗁𝖾𝗋𝖾 𝗍𝗈 𝗉𝗋𝗈𝗏𝖾 𝖺𝖽𝗆𝗂𝗇.",
                             callback_data=f"bans_{chat.id}=unban={user_id}={reason}={chat_title}",
                         ),
                     ],
@@ -435,7 +435,7 @@ async def unban(update: Update, context: ContextTypes.DEFAULT_TYPE) -> str:
 
     log = (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        f"#UNBANNED\n"
+        f"𝖴𝗇𝖻𝖺𝗇𝗇𝖾𝖽\n"
         f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
     )
 
@@ -490,7 +490,7 @@ async def selfunban(context: ContextTypes.DEFAULT_TYPE, update: Update) -> str:
 
     log = (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        f"#UNBANNED\n"
+        f"𝖴𝗇𝖻𝖺𝗇𝗇𝖾𝖽\n"
         f"<b>User:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
     )
 
@@ -578,7 +578,7 @@ async def bans_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         log = (
             f"<b>{html.escape(chat.title)}:</b>\n"
-            f"#BANNED\n"
+            f"𝖡𝖺𝗇𝗇𝖾𝖽\n"
             f"<b>Admin:</b> {mention_html(admin_user.id, html.escape(admin_user.first_name))}\n"
         )
 
@@ -671,7 +671,7 @@ async def bans_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         log = (
             f"<b>{html.escape(chat.title)}:</b>\n"
-            f"#UNBANNED\n"
+            f"𝖴𝗇𝖻𝖺𝗇𝗇𝖾𝖽\n"
             f"<b>Admin:</b> {mention_html(admin_user.id, html.escape(admin_user.first_name))}\n"
         )
 
@@ -693,7 +693,7 @@ async def bans_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 __help__ = """
 » /kickme: kicks the user who issued the command
 
-➠ *Admins only:*
+╭• *𝖠𝖽𝗆𝗂𝗇𝗌 𝖮𝗇𝗅𝗒:*
 » /ban <userhandle>: bans a user/channel. (via handle, or reply)
 
 » /sban <userhandle>: Silently ban a user. Deletes command, Replied message and doesn't reply. (via handle, or reply)
@@ -704,7 +704,7 @@ __help__ = """
 
 » /kick <userhandle>: kicks a user out of the group, (via handle, or reply)
 
-➠ NOTE:
+╭• 𝖭𝗈𝗍𝖾:
     Banning or UnBanning channels only work if you reply to their message, so don't use their username to ban/unban.
 """
 
@@ -728,7 +728,7 @@ function(ROAR_HANDLER)
 function(KICKME_HANDLER)
 function(BAN_CALLBACK_HANDLER)
 
-__mod_name__ = "BAN"
+__mod_name__ = "𝖡𝖺𝗇"
 __handlers__ = [
     BAN_HANDLER,
     TEMPBAN_HANDLER,
