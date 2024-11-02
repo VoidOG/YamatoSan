@@ -50,7 +50,7 @@ async def approve(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
     log_message = (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        f"#APPROVED\n"
+        f"𝖠𝗉𝗉𝗋𝗈𝗏𝖾𝖽\n"
         f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
         f"<b>User:</b> {mention_html(member.user.id, member.user.first_name)}"
     )
@@ -88,7 +88,7 @@ async def disapprove(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
     log_message = (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        f"#UNAPPROVED\n"
+        f"𝖴𝗇𝖺𝗉𝗉𝗋𝗈𝗏𝖾𝖽\n"
         f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
         f"<b>User:</b> {mention_html(member.user.id, member.user.first_name)}"
     )
@@ -160,7 +160,7 @@ async def unapproveall(update: Update, context: ContextTypes.DEFAULT_TYPE):
             [
                 [
                     InlineKeyboardButton(
-                        text="Unapprove all users",
+                        text="𝖴𝗇𝖺𝗉𝗉𝗋𝗈𝗏𝖾 𝖺𝗅𝗅 𝗎𝗌𝖾𝗋𝗌",
                         callback_data="unapproveall_user",
                     ),
                 ],
@@ -173,7 +173,7 @@ async def unapproveall(update: Update, context: ContextTypes.DEFAULT_TYPE):
             ],
         )
         await update.effective_message.reply_text(
-            f"Are you sure you would like to unapprove ALL users in {chat.title}? This action cannot be undone.",
+            f"Are you sure you would like to unapprove 𝖺𝗅𝗅 users in {chat.title}? This action cannot be undone.",
             reply_markup=buttons,
             parse_mode=ParseMode.MARKDOWN,
         )
@@ -211,12 +211,12 @@ async def unapproveall_btn(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 __help__ = """
-➠ Sometimes, you might trust a user not to send unwanted content.
+╭• Sometimes, you might trust a user not to send unwanted content.
 Maybe not enough to make them admin, but you might be ok with locks, blacklists, and antiflood not applying to them.
 
-➠ That's what approvals are for - approve of trustworthy users to allow them to send
+╭• That's what approvals are for - approve of trustworthy users to allow them to send
 
-➠ *Admin commands:*
+╭• *𝖠𝖽𝗆𝗂𝗇 𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌:*
 
 » /approval: Check a user's approval status in this chat.
 
@@ -245,6 +245,6 @@ dispatcher.add_handler(APPROVAL)
 dispatcher.add_handler(UNAPPROVEALL)
 dispatcher.add_handler(UNAPPROVEALL_BTN)
 
-__mod_name__ = "APPROVALS"
+__mod_name__ = "𝖠𝗉𝗉𝗋𝗈𝗏𝖺𝗅𝗌"
 __command_list__ = ["approve", "unapprove", "approved", "approval"]
 __handlers__ = [APPROVE, DISAPPROVE, APPROVED, APPROVAL]
