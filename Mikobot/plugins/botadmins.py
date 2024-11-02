@@ -46,7 +46,7 @@ async def botstaff(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
         owner = await get_chat_member(context, OWNER_ID)
         owner_info = await mention_html(owner.user.first_name, owner.user.id)
-        reply = f"✪ <b>OWNER :</b> {owner_info} (<code>{OWNER_ID}</code>)\n"
+        reply = f"✪ <b>Owner :</b> {owner_info} (<code>{OWNER_ID}</code>)\n"
     except TelegramError as e:
         LOGGER.error(f"Error getting owner information: {e}")
         reply = ""
@@ -81,7 +81,7 @@ function(CommandHandler("botadmins", botstaff, block=False))
 
 # <=================================================== HELP ====================================================>
 __help__ = """
-➠ *BOT ADMINS ONLY:*
+╭• *Bot Admins Only:*
 
 » /stats: Shows bot stats.
 
@@ -95,7 +95,7 @@ __help__ = """
 
 » /gcast: Advance broadcast system. Just reply to any message.
 
-➠ *Write with text message*
+╭• *Write with text message*
 
 » /broadcastall
 
@@ -104,5 +104,5 @@ __help__ = """
 » /broadcastgroups
 """
 
-__mod_name__ = "BOT-ADMIN"
+__mod_name__ = "Bot Admin"
 # <================================================ HANDLER =======================================================>
