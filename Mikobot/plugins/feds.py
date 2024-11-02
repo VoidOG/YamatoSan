@@ -1690,12 +1690,12 @@ async def fed_import_bans(update: Update, context: ContextTypes.DEFAULT_TYPE):
         else:
             if user.id not in DRAGONS:
                 put_chat(chat.id, new_jam, chat_data)
-        # if int(int(msg.reply_to_message.document.file_size)/1024) >= 200:
-         	# msg.reply_text("This file is too big!")
-        	return
-        success = 0
-        failed = 0
-        try:
+		    if int(int(msg.reply_to_message.document.file_size)/1024) >= 200:
+			    msg.reply_text("This file is too big!")
+			    return
+	success = 0
+	failed = 0
+	try:
             file_info = await bot.get_file(msg.reply_to_message.document.file_id)
         except BadRequest:
             await msg.reply_text(
