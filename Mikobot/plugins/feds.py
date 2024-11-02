@@ -160,7 +160,7 @@ async def del_fed(update: Update, context: ContextTypes.DEFAULT_TYPE):
             [
                 [
                     InlineKeyboardButton(
-                        text="⚠️ Delete Federation ⚠️",
+                        text="𝖣𝖾𝗅𝖾𝗍𝖾 𝖥𝖾𝖽𝖾𝗋𝖺𝗍𝗂𝗈𝗇",
                         callback_data="rmfed_{}".format(fed_id),
                     ),
                 ],
@@ -499,7 +499,7 @@ async def fed_info(update: Update, context: ContextTypes.DEFAULT_TYPE):
     chat = update.effective_chat
     info = sql.get_fed_info(fed_id)
 
-    text = "<b>ℹ️ Federation Information:</b>"
+    text = "<b>Federation Information:</b>"
     text += "\nFedID: <code>{}</code>".format(fed_id)
     text += "\nName: {}".format(info["fname"])
     text += "\nCreator: {}".format(mention_html(owner.id, owner_name))
@@ -543,7 +543,7 @@ async def fed_admin(update: Update, context: ContextTypes.DEFAULT_TYPE):
     info = sql.get_fed_info(fed_id)
 
     text = "<b>Federation Admin {}:</b>\n\n".format(info["fname"])
-    text += "👑 Owner:\n"
+    text += "Owner:\n"
     owner = await bot.get_chat(info["owner"])
     try:
         owner_name = owner.first_name + " " + owner.last_name
@@ -553,9 +553,9 @@ async def fed_admin(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     members = sql.all_fed_members(fed_id)
     if len(members) == 0:
-        text += "\n🔱 There are no admins in this federation"
+        text += "\n There are no admins in this federation"
     else:
-        text += "\n🔱 Admin:\n"
+        text += "\n Admin:\n"
         for x in members:
             user = await bot.get_chat(x)
             text += " • {}\n".format(mention_html(user.id, user.first_name))
@@ -1691,8 +1691,8 @@ async def fed_import_bans(update: Update, context: ContextTypes.DEFAULT_TYPE):
             if user.id not in DRAGONS:
                 put_chat(chat.id, new_jam, chat_data)
         # if int(int(msg.reply_to_message.document.file_size)/1024) >= 200:
-        # 	msg.reply_text("This file is too big!")
-        # 	return
+         	msg.reply_text("This file is too big!")
+        	return
         success = 0
         failed = 0
         try:
@@ -1837,8 +1837,8 @@ async def fed_import_bans(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     multi_import_username.append(import_username)
                     multi_import_reason.append(import_reason)
                     success += 1
-                    # t = ThreadWithReturnValue(target=sql.fban_user, args=(fed_id, str(import_userid), import_firstname, import_lastname, import_username, import_reason,))
-                    # t.start()
+			t = ThreadWithReturnValue(target=sql.fban_user, args=(fed_id, str(import_userid), import_firstname, import_lastname, import_username, import_reason,))
+			t.start()
                 sql.multi_fban_user(
                     multi_fed_id,
                     multi_import_userid,
@@ -2418,7 +2418,7 @@ def get_chat(chat_id, chat_data):
 
 async def fed_owner_help(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.effective_message.reply_text(
-        """*👑 Fed Owner Only:*
+        """* Fed Owner Only:*
  » `/newfed <fed_name>`*:* Creates a Federation, One allowed per user
  » `/renamefed <fed_id> <new_fed_name>`*:* Renames the fed id to a new name
  » `/delfed <fed_id>`*:* Delete a Federation, and any information related to it. Will not cancel blocked users
@@ -2436,7 +2436,7 @@ async def fed_owner_help(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def fed_admin_help(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.effective_message.reply_text(
-        """*🔱 Fed Admins:*
+        """* Fed Admins:*
  » `/fban <user> <reason>`*:* Fed bans a user
  » `/unfban <user> <reason>`*:* Removes a user from a fed ban
  » `/fedinfo <fed_id>`*:* Information about the specified Federation
@@ -2453,7 +2453,7 @@ async def fed_admin_help(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def fed_user_help(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.effective_message.reply_text(
-        """*🎩 Any user:*
+        """* Any user:*
  » `/fbanstat`*:* Shows if you/or the user you are replying to or their username is fbanned somewhere or not
  » `/fednotif <on/off>`*:* Federation settings not in PM when there are users who are fbaned/unfbanned
  » `/frules`*:* See Federation regulations\n""",
@@ -2464,16 +2464,16 @@ async def fed_user_help(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # <=================================================== HELP ====================================================>
 
 
-__mod_name__ = "FEDS"
+__mod_name__ = "𝖥𝖾𝖽𝗌"
 
 __help__ = """
-➠ *Everything is fun, until a spammer starts entering your group, and you have to block it. Then you need to start banning more, and more, and it hurts*.
+╭• *Everything is fun, until a spammer starts entering your group, and you have to block it. Then you need to start banning more, and more, and it hurts*.
 *But then you have many groups, and you don't want this spammer to be in one of your groups - how can you deal? Do you have to manually block it, in all your groups*?\n
 *No longer!* *With Federation, you can make a ban in one chat overlap with all other chats*.\n
 *You can even designate federation admins, so your trusted admin can ban all the spammers from chats you want to protect*.\n
 
-➠ *Commands:*
-➠ Feds are now divided into 3 sections for your ease.
+╭• *𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌:*
+╭• Feds are now divided into 3 sections for your ease.
 
 » /fedownerhelp: Provides help for fed creation and owner only commands.
 
