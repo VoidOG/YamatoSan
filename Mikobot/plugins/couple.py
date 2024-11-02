@@ -10,11 +10,7 @@ from Mikobot import app
 # <=======================================================================================================>
 
 # List of additional images
-ADDITIONAL_IMAGES = [
-    "https://telegra.ph/file/7ef6006ed6e452a6fd871.jpg",
-    "https://telegra.ph/file/16ede7c046f35e699ed3c.jpg",
-    "https://telegra.ph/file/f16b555b2a66853cc594e.jpg",
-    "https://telegra.ph/file/7ef6006ed6e452a6fd871.jpg",
+ADDITIONAL_IMAGES =[
 ]
 
 
@@ -41,17 +37,17 @@ tomorrow = str(dt_tom())
 today = str(dt()[0])
 
 C = """
-•➵💞࿐ 𝐇𝐚𝐩𝐩𝐲 𝐜𝐨𝐮𝐩𝐥𝐞 𝐨𝐟 𝐭𝐡𝐞 𝐝𝐚𝐲
+   𝖢𝗈𝗎𝗉𝗅𝖾 𝗈𝖿 𝗍𝗁𝖾 𝖽𝖺𝗒
 ╭──────────────
-┊•➢ {} + ( PGM🎀😶 (https://t.me/Chalnayaaaaaarr) + 花火 (https://t.me/zd_sr07) + ゼロツー (https://t.me/wewewe_x) ) = 💞
+┊ {} + ( PGM🎀😶 (https://t.me/Chalnayaaaaaarr) + 花火 (https://t.me/zd_sr07) + ゼロツー (https://t.me/wewewe_x) ) = 💞
 ╰───•➢♡
 ╭──────────────
-┊•➢ 𝗡𝗲𝘄 𝗰𝗼𝘂𝗽𝗹𝗲 𝗼𝗳 𝘁𝗵𝗲 𝗱𝗮𝘆 𝗺𝗮𝘆𝗯𝗲
-┊ 𝗰𝗵𝗼𝘀𝗲𝗻 𝗮𝘁 12AM {}
+┊•➢ 𝖭𝖾𝗐 𝖢𝗈𝗎𝗉𝗅𝖾 𝗈𝖿 𝗍𝗁𝖾 𝖽𝖺𝗒 𝗆𝖺𝗒𝖻𝖾
+┊ 𝖼𝗁𝗈𝗌𝖾𝗇 𝖺𝗍 12𝖺𝗆 {}
 ╰───•➢♡
 """
 CAP = """
-•➵💞࿐ 𝐇𝐚𝐩𝐩𝐲 𝐜𝐨𝐮𝐩𝐥𝐞 𝐨𝐟 𝐭𝐡𝐞 𝐝𝐚𝐲
+   𝖢𝗈𝗎𝗉𝗅𝖾 𝗈𝖿 𝗍𝗁𝖾 𝖽𝖺𝗒
 ╭──────────────
 ┊•➢ {} + {} = 💞
 ╰───•➢♡
