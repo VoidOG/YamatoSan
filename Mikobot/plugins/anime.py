@@ -4,7 +4,7 @@ from telegram.ext import ContextTypes, CommandHandler
 from Mikobot import dispatcher
 from Mikobot.plugins.log_channel import loggable
 
-    DEFAULT_SERVICE_URLS = (
+DEFAULT_SERVICE_URLS = (
     "translate.google.ac",
     "translate.google.ad",
     "translate.google.ae",
@@ -207,7 +207,7 @@ from Mikobot.plugins.log_channel import loggable
     "translate.google.vg",
     "translate.google.vu",
     "translate.google.ws",
-    )
+)
 
 LANGUAGES = {
     "af": "afrikaans",
