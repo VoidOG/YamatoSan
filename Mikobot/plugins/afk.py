@@ -44,12 +44,12 @@ async def afk(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
         if reason:
             await update.effective_message.reply_text(
-                f"➲ {fname} is now away! \n\n➦ Reason: <code>{reason}</code> \n {notice}",
+                f"{fname} 𝗂𝗌 𝗇𝗈𝗐 𝖺𝗐𝖺𝗒!\n𝖱𝖾𝖺𝗌𝗈𝗇: <code>{reason}</code> \n {notice}",
                 parse_mode="html",
             )
         else:
             await update.effective_message.reply_text(
-                "➲ {} is now away!{}".format(fname, notice),
+                "{} 𝗂𝗌 𝗇𝗈𝗐 𝖺𝗐𝖺𝗒!{}".format(fname, notice),
             )
     except BadRequest:
         pass
@@ -74,18 +74,18 @@ async def no_longer_afk(update: Update, context: ContextTypes.DEFAULT_TYPE):
         firstname = update.effective_user.first_name
         try:
             options = [
-                "➲ {} is here!",
-                "➲ {} is back!",
-                "➲ {} is now in the chat!",
-                "➲ {} is awake!",
-                "➲ {} is back online!",
-                "➲ {} is finally here!",
-                "➲ Welcome back! {}",
+                "{} 𝗂𝗌 𝗁𝖾𝗋𝖾!",
+                "{} 𝗂𝗌 𝖻𝖺𝖼𝗄!",
+                "{} 𝗂𝗌 𝗇𝗈𝗐 𝗂𝗇 𝗍𝗁𝖾 𝖼𝗁𝖺𝗍!",
+                "{} 𝗂𝗌 𝖺𝗐𝖺𝗄𝖾!",
+                "{} 𝗂𝗌 𝖻𝖺𝖼𝗄 𝗈𝗇𝗅𝗂𝗇𝖾!",
+                "{} 𝗂𝗌 𝖿𝗂𝗇𝖺𝗅𝗅𝗒 𝗁𝖾𝗋𝖾!",
+                "𝖶𝖾𝗅𝖼𝗈𝗆𝖾 𝖻𝖺𝖼𝗄! {}",
             ]
             chosen_option = random.choice(options)
             await update.effective_message.reply_text(
                 chosen_option.format(firstname)
-                + f"\n\nYou were AFK for: <code>{time}</code>",
+                + f"\n\n𝖸𝗈𝗎 𝗐𝖾𝗋𝖾 𝖺𝖿𝗄 𝖿𝗈𝗋: <code>{time}</code>",
                 parse_mode="html",
             )
         except:
@@ -160,14 +160,14 @@ async def check_afk(
         time = humanize.naturaldelta(datetime.now() - user.time)
 
         if not user.reason:
-            res = "➲ {} is afk.\n\n➦ Last seen {} ago.".format(
+            res = "{} 𝗂𝗌 𝖺𝖿𝗄.\n\n𝖫𝖺𝗌𝗍 𝗌𝗉𝗈𝗍𝗍𝖾𝖽 𝖻𝗒 𝗁𝗎𝗆𝖺𝗇𝗌 {} 𝖺𝗀𝗈.".format(
                 fst_name,
                 time,
             )
             await update.effective_message.reply_text(res)
         else:
             res = (
-                "➲ {} is afk.\n\n➦ Reason: <code>{}</code>\n➦ Last seen {} ago.".format(
+                "➲ {} 𝗂𝗌 𝖺𝖿𝗄.\n\n𝖱𝖾𝖺𝗌𝗈𝗇: <code>{}</code>\n 𝖫𝖺𝗌𝗍 𝗌𝖾𝖾𝗇 {} 𝖺𝗀𝗈.".format(
                     html.escape(fst_name),
                     html.escape(user.reason),
                     time,
@@ -190,7 +190,7 @@ __help__ = """
 
 » /byedel - Enable auto delete AFK message in group (Only for group admin). Default is **Enable**.
 
-➠ *When marked as AFK, any mentions will be replied to with a message to say you're not available!*
+╭• *When marked as AFK, any mentions will be replied to with a message to say you're not available!*
 """
 
 # <================================================ HANDLER =======================================================>
@@ -210,7 +210,7 @@ function(AFK_REGEX_HANDLER, AFK_GROUP)
 function(NO_AFK_HANDLER, AFK_GROUP)
 function(AFK_REPLY_HANDLER, AFK_REPLY_GROUP)
 
-__mod_name__ = "AFK"
+__mod_name__ = "𝖠𝖿𝗄"
 __command_list__ = ["afk"]
 __handlers__ = [
     (AFK_HANDLER, AFK_GROUP),
