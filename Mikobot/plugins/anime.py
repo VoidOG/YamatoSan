@@ -4,6 +4,9 @@ from telegram.ext import ContextTypes, CommandHandler
 from Mikobot import dispatcher
 from Mikobot.plugins.log_channel import loggable
 
+DEFAULT_SERVICE_URLS = ["https://example.com/service1", "https://example.com/service2"]
+LANGUAGES = ["English", "Japanese", "French"]
+
 @loggable
 async def anime(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Replace with your image URL and caption
