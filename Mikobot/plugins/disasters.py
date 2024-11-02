@@ -69,9 +69,9 @@ async def add_disaster_level(update: Update, level: str, context) -> str:
     )
 
     log_message = (
-        f"#{level.upper()}\n"
-        f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
-        f"<b>User:</b> {mention_html(user_member.id, html.escape(user_member.first_name))}"
+        f"{level.upper()}\n"
+        f"<b>𝖠𝖽𝗆𝗂𝗇:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+        f"<b>𝖴𝗌𝖾𝗋:</b> {mention_html(user_member.id, html.escape(user_member.first_name))}"
     )
 
     if chat.type != "private":
@@ -120,7 +120,7 @@ dispatcher.add_handler(SUPPORT_HANDLER)
 dispatcher.add_handler(TIGER_HANDLER)
 dispatcher.add_handler(WHITELIST_HANDLER)
 
-__mod_name__ = "Devs"
+__mod_name__ = "𝖣𝖾𝗏𝗌"
 __handlers__ = [
     SUDO_HANDLER,
     SUPPORT_HANDLER,
