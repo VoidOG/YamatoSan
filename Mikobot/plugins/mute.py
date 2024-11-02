@@ -118,8 +118,6 @@ async def unmute(update: Update, context: ContextTypes.DEFAULT_TYPE) -> str:
                 can_pin_messages=True,
                 can_send_polls=True,
                 can_change_info=True,
-                can_send_media_messages=True,
-                can_send_other_messages=True,
                 can_add_web_page_previews=True,
             )
             try:
