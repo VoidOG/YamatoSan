@@ -167,7 +167,7 @@ async def member_has_joined(client, member: ChatMemberUpdated):
             temp.MELCOW[f"welcome-{chat_id}"] = await client.send_photo(
                 member.chat.id,
                 photo=welcomeimg,
-                caption=f"𝖧𝖾𝗒 {mention}, 𝖶𝖾𝗅𝖼𝗈𝗆𝖾 𝗍𝗈 {member.chat.title} 𝗀𝗋𝗈𝗎𝗉.\n𝖨𝖣: {user_id}\n𝖣𝖺𝗍𝖾 𝖩𝗈𝗂𝗇𝖾𝖽: {joined_date}",
+                caption=f"𝖧𝖾𝗒 {mention}, 𝖶𝖾𝗅𝖼𝗈𝗆𝖾 𝗍𝗈 {member.chat.title} 𝗀𝗋𝗈𝗎𝗉.\n𝖨𝖣: {user_id} 𝖣𝖺𝗍𝖾 𝖩𝗈𝗂𝗇𝖾𝖽: {joined_date}",
                 reply_markup=inline_keyboard,  # Add the inline keyboard
             )
         except Exception as e:
@@ -1328,7 +1328,7 @@ function(CLEAN_SERVICE_HANDLER)
 function(BUTTON_VERIFY_HANDLER)
 function(WELCOME_MUTE_HELP)
 
-__mod_name__ = "WELCOME"
+__mod_name__ = "𝖶𝖾𝗅𝖼𝗈𝗆𝖾"
 __command_list__ = []
 __handlers__ = [
     NEW_MEM_HANDLER,
