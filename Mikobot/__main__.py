@@ -163,7 +163,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="◁", callback_data="help_back")]]
+                        [[InlineKeyboardButton(text="ᐸ", callback_data="help_back")]]
                     ),
                 )
 
@@ -189,7 +189,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 parse_mode=ParseMode.MARKDOWN,
             )
             await asyncio.sleep(0.2)
-            guu = await update.effective_message.reply_text("🐾")
+            guu = await update.effective_message.reply_text("👾")
             await asyncio.sleep(1.8)
             await guu.delete()  # Await this line
             await update.effective_message.reply_text(
@@ -202,7 +202,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await message.reply_photo(
             photo=str(choice(START_IMG)),
             reply_markup=InlineKeyboardMarkup(GROUP_START_BTN),
-            caption="<b>I am Alive!</b>\n\n<b>Since​:</b> <code>{}</code>".format(
+            caption="<b>𝖨 𝖺𝗆 𝖠𝗅𝗂𝗏𝖾!</b>\n\n<b>𝖲𝗂𝗇𝖼𝖾​:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -213,22 +213,22 @@ async def extra_command_handlered(update: Update, context: ContextTypes.DEFAULT_
 
     keyboard = [
         [
-            InlineKeyboardButton("MANAGEMENT", callback_data="help_back"),
-            InlineKeyboardButton("AI", callback_data="ai_command_handler"),
+            InlineKeyboardButton("𝖬𝖺𝗇𝖺𝗀𝖾𝗆𝖾𝗇𝗍", callback_data="help_back"),
+            InlineKeyboardButton("𝖠𝖨", callback_data="ai_command_handler"),
         ],
         [
-            InlineKeyboardButton("ANIME", callback_data="anime_command_handler"),
-            InlineKeyboardButton("GENSHIN", callback_data="genshin_command_handler"),
+            InlineKeyboardButton("𝖭𝗑𝗂𝗏𝗆 𝖠𝗇𝗂𝗆𝖾", callback_data="anime_command_handler"),
+            InlineKeyboardButton("𝖡𝗅𝗈𝗈𝖽𝗌", callback_data="genshin_command_handler"),
         ],
         [
-            InlineKeyboardButton("HOME", callback_data="Miko_back"),
+            InlineKeyboardButton("𝖧𝗈𝗆𝖾", callback_data="Miko_back"),
         ],
     ]
 
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     await update.message.reply_text(
-        "𝙎𝙚𝙡𝙚𝙘𝙩 𝙩𝙝𝙚 [𝙨𝙚𝙘𝙩𝙞𝙤𝙣](https://telegra.ph/file/8c092f4e9d303f9497c83.jpg) 𝙩𝙝𝙖𝙩 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙤𝙥𝙚𝙣",
+        "𝖯𝗅𝖾𝖺𝗌𝖾 𝖼𝗁𝗈𝗈𝗌𝖾 𝗍𝗁𝖾 [𝗌𝖾𝗀𝗆𝖾𝗇𝗍](https://telegra.ph/file/8c092f4e9d303f9497c83.jpg) 𝗍𝗁𝖺𝗍 𝗒𝗈𝗎 𝗐𝖺𝗇𝗍 𝗍𝗈 𝖺𝖼𝖼𝖾𝗌𝗌",
         reply_markup=reply_markup,
         parse_mode="Markdown",
     )
@@ -239,23 +239,23 @@ async def extra_command_callback(update: Update, context: ContextTypes.DEFAULT_T
     if query.data == "extra_command_handler":
         await query.answer()  # Use 'await' for asynchronous calls
         await query.message.edit_text(
-            "𝙎𝙚𝙡𝙚𝙘𝙩 𝙩𝙝𝙚 [𝙨𝙚𝙘𝙩𝙞𝙤𝙣](https://telegra.ph/file/8c092f4e9d303f9497c83.jpg) 𝙩𝙝𝙖𝙩 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙤𝙥𝙚𝙣",
+            "𝖯𝗅𝖾𝖺𝗌𝖾 𝖼𝗁𝗈𝗈𝗌𝖾 𝗍𝗁𝖾 [𝗌𝖾𝗀𝗆𝖾𝗇𝗍](https://telegra.ph/file/8c092f4e9d303f9497c83.jpg) 𝗍𝗁𝖺𝗍 𝗒𝗈𝗎 𝗐𝖺𝗇𝗍 𝗍𝗈 𝖺𝖼𝖼𝖾𝗌𝗌",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("MANAGEMENT", callback_data="help_back"),
-                        InlineKeyboardButton("AI", callback_data="ai_command_handler"),
+                        InlineKeyboardButton("𝖬𝖺𝗇𝖺𝗀𝖾𝗆𝖾𝗇𝗍", callback_data="help_back"),
+                        InlineKeyboardButton("𝖠𝖨", callback_data="ai_command_handler"),
                     ],
                     [
                         InlineKeyboardButton(
-                            "ANIME", callback_data="anime_command_handler"
+                            "𝖭𝗑𝗂𝗏𝗆 𝖠𝗇𝗂𝗆𝖾", callback_data="anime_command_handler"
                         ),
                         InlineKeyboardButton(
-                            "GENSHIN", callback_data="genshin_command_handler"
+                            "𝖡𝗅𝗈𝗈𝖽𝗌", callback_data="genshin_command_handler"
                         ),
                     ],
                     [
-                        InlineKeyboardButton("HOME", callback_data="Miko_back"),
+                        InlineKeyboardButton("𝖧𝗈𝗆𝖾", callback_data="Miko_back"),
                     ],
                 ]
             ),
@@ -266,14 +266,14 @@ async def extra_command_callback(update: Update, context: ContextTypes.DEFAULT_T
 async def ai_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
         [
-            InlineKeyboardButton("AI", callback_data="ai_handler"),
-            InlineKeyboardButton("IMAGEGEN", callback_data="more_aihandlered"),
+            InlineKeyboardButton("𝖠𝖨", callback_data="ai_handler"),
+            InlineKeyboardButton("𝖨𝗆𝖺𝗀𝖾 𝖦𝖾𝗇", callback_data="more_aihandlered"),
         ],
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     await update.message.reply_text(
-        "🧠 *Here are the options for* [𝗬𝗔𝗘 𝗠𝗜𝗞𝗢](https://telegra.ph/file/ed2d9c3693cacc9b0464e.jpg):",
+        " *𝖧𝖾𝗋𝖾 𝖺𝗋𝖾 𝗍𝗁𝖾 𝗈𝗉𝗍𝗂𝗈𝗇𝗌 𝖿𝗈𝗋* [𝖸𝖺𝗆𝖺𝗍𝗈 𝖲𝖺𝗇](https://telegra.ph/file/ed2d9c3693cacc9b0464e.jpg):",
         reply_markup=reply_markup,
         parse_mode="Markdown",
     )
@@ -284,18 +284,18 @@ async def ai_command_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     if query.data == "ai_command_handler":
         await query.answer()
         await query.message.edit_text(
-            "🧠 *Here are the options for* [𝗬𝗔𝗘 𝗠𝗜𝗞𝗢](https://telegra.ph/file/ed2d9c3693cacc9b0464e.jpg):",
+            " *𝖧𝖾𝗋𝖾 𝖺𝗋𝖾 𝗍𝗁𝖾 𝗈𝗉𝗍𝗂𝗈𝗇𝗌 𝖿𝗈𝗋* [𝖸𝖺𝗆𝖺𝗍𝗈 𝖲𝖺𝗇](https://telegra.ph/file/ed2d9c3693cacc9b0464e.jpg):",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("AI", callback_data="ai_handler"),
+                        InlineKeyboardButton("𝖠𝖨", callback_data="ai_handler"),
                         InlineKeyboardButton(
-                            "IMAGEGEN", callback_data="more_aihandlered"
+                            "𝖨𝗆𝖺𝗀𝖾 𝖦𝖾𝗇", callback_data="more_aihandlered"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            "» 𝘽𝘼𝘾𝙆 «", callback_data="extra_command_handler"
+                            "𝖡𝖺𝖼𝗄", callback_data="extra_command_handler"
                         ),
                     ],
                 ]
@@ -309,21 +309,21 @@ async def ai_handler_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     if query.data == "ai_handler":
         await query.answer()
         await query.message.edit_text(
-            "[𝗔𝗿𝘁𝗶𝗳𝗶𝗰𝗶𝗮𝗹 𝗜𝗻𝘁𝗲𝗹𝗹𝗶𝗴𝗲𝗻𝘁 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻𝘀](https://telegra.ph/file/01a2e0cd1b9d03808c546.jpg):\n\n"
-            "All Commands:\n"
-            "➽ /askgpt <write query>: A chatbot using GPT for responding to user queries.\n\n"
-            "➽ /palm <write prompt>: Performs a Palm search using a chatbot.\n\n"
-            "➽ /upscale <reply to image>: Upscales your image quality.",
+            "[𝖠𝗋𝗍𝗂𝖿𝗂𝖼𝗂𝖺𝗅 𝖨𝗇𝗍𝖾𝗅𝗅𝗂𝗀𝖾𝗇𝖼𝖾 𝖥𝗎𝗇𝖼𝗍𝗂𝗈𝗇𝗌](https://telegra.ph/file/01a2e0cd1b9d03808c546.jpg):\n\n"
+            "𝖠𝗅𝗅 𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌:\n"
+            "╭• /askgpt <write query>: A chatbot using GPT for responding to user queries.\n\n"
+            "╭• /palm <write prompt>: Performs a Palm search using a chatbot.\n\n"
+            "╭• /upscale <reply to image>: Upscales your image quality.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            "More Image Gen ➪", callback_data="more_ai_handler"
+                            "𝖬𝗈𝗋𝖾 𝖨𝗆𝖺𝗀𝖾 𝖦𝖾𝗇", callback_data="more_ai_handler"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            "⇦ BACK", callback_data="ai_command_handler"
+                            "𝖡𝖺𝖼𝗄", callback_data="ai_command_handler"
                         ),
                     ],
                 ],
@@ -337,31 +337,31 @@ async def more_ai_handler_callback(update: Update, context: ContextTypes.DEFAULT
     if query.data == "more_ai_handler":
         await query.answer()
         await query.message.edit_text(
-            "*Here's more image gen related commands*:\n\n"
-            "Command: /meinamix\n"
+            "*𝖧𝖾𝗋𝖾𝗌 𝗆𝗈𝗋𝖾 𝗂𝗆𝖺𝗀𝖾 𝗀𝖾𝗇 𝗋𝖾𝗅𝖺𝗍𝖾𝖽 𝖼𝗈𝗆𝗆𝖺𝗇𝖽*:\n\n"
+            "╭•Command: /meinamix\n"
             "  • Description: Generates an image using the meinamix model.\n\n"
-            "Command: /darksushi\n"
+            "╭•Command: /darksushi\n"
             "  • Description: Generates an image using the darksushi model.\n\n"
-            "Command: /meinahentai\n"
+            "╭•Command: /meinahentai\n"
             "  • Description: Generates an image using the meinahentai model.\n\n"
-            "Command: /darksushimix\n"
+            "╭•Command: /darksushimix\n"
             "  • Description: Generates an image using the darksushimix model.\n\n"
-            "Command: /anylora\n"
+            "╭•Command: /anylora\n"
             "  • Description: Generates an image using the anylora model.\n\n"
-            "Command: /cetsumix\n"
+            "╭•Command: /cetsumix\n"
             "  • Description: Generates an image using the cetsumix model.\n\n"
-            "Command: /anything\n"
+            "╭•Command: /anything\n"
             "  • Description: Generates an image using the anything model.\n\n"
-            "Command: /absolute\n"
+            "╭•Command: /absolute\n"
             "  • Description: Generates an image using the absolute model.\n\n"
-            "Command: /darkv2\n"
+            "╭•Command: /darkv2\n"
             "  • Description: Generates an image using the darkv2 model.\n\n"
-            "Command: /creative\n"
+            "╭•Command: /creative\n"
             "  • Description: Generates an image using the creative model.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("⇦ BACK", callback_data="ai_handler"),
+                        InlineKeyboardButton("𝖡𝖺𝖼𝗄", callback_data="ai_handler"),
                     ],
                 ],
             ),
@@ -373,7 +373,7 @@ async def more_aihandlered_callback(update: Update, context: ContextTypes.DEFAUL
     if query.data == "more_aihandlered":
         await query.answer()
         await query.message.edit_text(
-            "*Here's more image gen related commands*:\n\n"
+            "*𝖧𝖾𝗋𝖾𝗌 𝗆𝗈𝗋𝖾 𝗂𝗆𝖺𝗀𝖾 𝗀𝖾𝗇 𝗋𝖾𝗅𝖺𝗍𝖾𝖽 𝖼𝗈𝗆𝗆𝖺𝗇𝖽*:\n\n"
             "*Command*: /meinamix\n"
             "  • Description: Generates an image using the meinamix model.\n\n"
             "*Command*: /darksushi\n"
@@ -398,7 +398,7 @@ async def more_aihandlered_callback(update: Update, context: ContextTypes.DEFAUL
                 [
                     [
                         InlineKeyboardButton(
-                            "⇦ BACK", callback_data="ai_command_handler"
+                            "𝖡𝖺𝖼𝗄", callback_data="ai_command_handler"
                         ),
                     ],
                 ],
@@ -411,35 +411,19 @@ async def anime_command_callback(update: Update, context: ContextTypes.DEFAULT_T
     if query.data == "anime_command_handler":
         await query.answer()
         await query.message.edit_text(
-            "⛩[𝗔𝗻𝗶𝗺𝗲 𝗨𝗽𝗱𝗮𝘁𝗲𝘀](https://telegra.ph//file/59d93fede8bf12fec1a51.jpg) :\n\n"
-            "**╔ /anime: **fetches info on single anime (includes buttons to look up for prequels and sequels)\n"
-            "**╠ /character: **fetches info on multiple possible characters related to query\n"
-            "**╠ /manga: **fetches info on multiple possible mangas related to query\n"
-            "**╠ /airing: **fetches info on airing data for anime\n"
-            "**╠ /studio: **fetches info on multiple possible studios related to query\n"
-            "**╠ /schedule: **fetches scheduled animes\n"
-            "**╠ /browse: **get popular, trending or upcoming animes\n"
-            "**╠ /top: **to retrieve top animes for a genre or tag\n"
-            "**╠ /watch: **fetches watch order for anime series\n"
-            "**╠ /fillers: **to get a list of anime fillers\n"
-            "**╠ /gettags: **get a list of available tags\n"
-            "**╠ /animequotes: **get random anime quotes\n"
-            "**╚ /getgenres: **Get list of available Genres\n\n"
-            "**⚙️ Group Settings:**\n"
-            "**╔**\n"
-            "**╠ /anisettings: **to toggle NSFW lock and airing notifications and other settings in groups (anime news)\n"
-            "**╚**",
+            "⛩[𝖭𝗑𝗂𝗏𝗆 𝖠𝗇𝗂𝗆𝖾](https://i.ibb.co/vVmcvVJ/file-1047.jpg) :\n\n"
+            "𝖱𝖾𝗌𝖾𝗋𝗏𝖾𝖽 𝖿𝗈𝗋 𝗌𝗈𝗆𝖾𝗍𝗁𝗂𝗇𝗀 𝗌𝗉𝖾𝖼𝗂𝖺𝗅 𝖼𝗈𝗆𝗂𝗇𝗀 𝗌𝗈𝗈𝗇 𝗂𝗇 𝗎𝗉𝖽𝖺𝗍𝖾𝗌",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("More Info", url="https://anilist.co/"),
+                        InlineKeyboardButton("𝖬𝗈𝗋𝖾 𝖨𝗇𝖿𝗈", url="https://𝗍.𝗆𝖾/𝖠𝗅𝖼𝗒𝗈𝗇𝖾𝖡𝗈𝗍𝗌"),
                         InlineKeyboardButton(
-                            "㊋Infamous•Hydra", url="https://t.me/Infamous_Hydra"
+                            "𝖭𝗑𝗂𝗏𝗆 𝖠𝗇𝗂𝗆𝖾", url="𝗁𝗍𝗍𝗉𝗌://𝗍.𝗆𝖾/𝖭𝗑𝗂𝗏𝗆_𝖭𝖾𝗍𝗐𝗈𝗋𝗄"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            "» 𝘽𝘼𝘾𝙆 «", callback_data="extra_command_handler"
+                            "𝖡𝖺𝖼𝗄", callback_data="extra_command_handler"
                         ),
                     ],
                 ]
@@ -453,18 +437,18 @@ async def genshin_command_callback(update: Update, context: ContextTypes.DEFAULT
     if query.data == "genshin_command_handler":
         await query.answer()
         await query.message.edit_text(
-            "⛩ [𝗚𝗲𝗻𝘀𝗵𝗶𝗻 𝗜𝗺𝗽𝗮𝗰𝘁](https://telegra.ph/file/cd03348a4a357624e70db.jpg) ⛩\n\n"
-            "*UNDER DEVELOPMENT*",
+            "🍀 [𝖳𝖾𝖺𝗆 𝖡𝗅𝗈𝗈𝖽𝗌](https://i.ibb.co/6nwRVn8/file-1046.jpg) 🍀\n\n"
+            "*𝖢𝗈𝗆𝗂𝗇𝗀 𝗌𝗈𝗈𝗇 𝗂𝗇 𝖺𝖿𝗍𝖾𝗋 𝗎𝗉𝖽𝖺𝗍𝖾𝗌*",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            "More Info", url="https://genshin.mihoyo.com/"
+                            "𝖬𝗈𝗋𝖾 𝖨𝗇𝖿𝗈", url="https://t.me/Team_Bloods"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            "» 𝘽𝘼𝘾𝙆 «", callback_data="extra_command_handler"
+                            "𝖡𝖺𝖼𝗄", callback_data="extra_command_handler"
                         ),
                     ],
                 ]
@@ -546,7 +530,7 @@ async def help_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if mod_match:
             module = mod_match.group(1)
             text = (
-                "➲ *HELP SECTION OF* *{}* :\n".format(HELPABLE[module].__mod_name__)
+                "*╭• 𝖧𝖾𝗅𝗉 𝗌𝖾𝖼𝗍𝗂𝗈𝗇 𝗈𝖿* *{}* :\n".format(HELPABLE[module].__mod_name__)
                 + HELPABLE[module].__help__
             )
             await query.message.edit_text(
@@ -554,7 +538,7 @@ async def help_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="◁", callback_data="help_back")]]
+                    [[InlineKeyboardButton(text="ᐸ", callback_data="help_back")]]
                 ),
             )
 
@@ -601,18 +585,18 @@ async def stats_back(update: Update, context: ContextTypes.DEFAULT_TYPE):
         mem = psutil.virtual_memory().percent
         disk = psutil.disk_usage("/").percent
         text = f"""
-𝙎𝙮𝙨𝙩𝙚𝙢 𝙨𝙩𝙖𝙩𝙨@𝙔𝙖𝙚𝙈𝙞𝙠𝙤_𝙍𝙤𝙭𝙗𝙤𝙩
+𝖵𝖯𝖲 𝖲𝗍𝖺𝗍𝗌 𝗈𝖿 𝖸𝖺𝗆𝖺𝗍𝗈 𝖲𝖺𝗇 𝖻𝗈𝗍
 ➖➖➖➖➖➖
-UPTIME ➼ {uptime}
-CPU ➼ {cpu}%
-RAM ➼ {mem}%
-DISK ➼ {disk}%
+𝖴𝗉𝗍𝗂𝗆𝖾 ╭• {uptime}
+𝖢𝗉𝗎 ╭• {cpu}%
+𝖱𝖺𝗆 ╭• {mem}%
+𝖣𝗂𝗌𝗄 ╭• {disk}%
 
-PYTHON ➼ {PYTHON_VERSION}
+𝖯𝗒𝗍𝗁𝗈𝗇 ╭• {PYTHON_VERSION}
 
-PTB ➼ {PTB_VERSION}
-TELETHON ➼ {TELETHON_VERSION}
-PYROGRAM ➼ {PYROGRAM_VERSION}
+𝖯𝖳𝖯 ╭• {PTB_VERSION}
+𝖳𝖾𝗅𝖾𝗍𝗁𝗈𝗇 ╭• {TELETHON_VERSION}
+𝖯𝗒𝗋𝗈𝗀𝗋𝖺𝗆 ╭• {PYROGRAM_VERSION}
 """
         await query.answer(text=text, show_alert=True)
 
@@ -621,14 +605,14 @@ async def gitsource_callback(update: Update, context: ContextTypes.DEFAULT_TYPE)
     query = update.callback_query
     await query.answer()
 
-    if query.data == "git_source":
-        source_link = "https://github.com/Infamous-Hydra/YaeMiko"
+    if query.data == "𝖮𝗍𝗁𝖾𝗋 𝖡𝗈𝗍𝗌":
+        source_link = "https://𝗍.𝗆𝖾/𝖠𝗅𝖼𝗒𝗈𝗇𝖾 𝖡𝗈𝗍𝗌"
         message_text = (
-            f"*Here is the link for the public source repo*:\n\n{source_link}"
+            f"*𝖢𝗁𝖾𝖼𝗄 𝗈𝗎𝗍 𝗈𝗎𝗋 𝗈𝗍𝗁𝖾𝗋 𝖻𝗈𝗍𝗌!!*:\n\n{source_link}"
         )
 
         # Adding the inline button
-        keyboard = [[InlineKeyboardButton(text="◁", callback_data="Miko_back")]]
+        keyboard = [[InlineKeyboardButton(text="ᐸ", callback_data="Miko_back")]]
         reply_markup = InlineKeyboardMarkup(keyboard)
 
         await query.edit_message_text(
@@ -639,9 +623,9 @@ async def gitsource_callback(update: Update, context: ContextTypes.DEFAULT_TYPE)
         )
 
 
-async def repo(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    source_link = "https://github.com/Infamous-Hydra/YaeMiko"
-    message_text = f"*Here is the link for the public source repo*:\n\n{source_link}"
+async def 𝖻𝗈𝗍𝗌(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    source_link = "𝗁𝗍𝗍𝗉𝗌://𝗍.𝗆𝖾/𝖺𝗅𝖼𝗒𝗈𝗇𝖾𝖻𝗈𝗍𝗌"
+    message_text = f"*𝖢𝗁𝖾𝖼𝗄 𝗈𝗎𝗍 𝗈𝗎𝗋 𝗈𝗍𝗁𝖾𝗋 𝖻𝗈𝗍𝗌 𝗁𝖾𝗋𝖾*:\n\n{source_link}"
 
     await context.bot.send_message(
         chat_id=update.effective_chat.id,
@@ -656,10 +640,10 @@ async def Miko_about_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
     if query.data == "Miko_":
         uptime = get_readable_time((time.time() - StartTime))
         message_text = (
-            f"➲ <b>Ai integration.</b>"
-            f"\n➲ <b>Advance management capability.</b>"
-            f"\n➲ <b>Anime bot functionality.</b>"
-            f"\n\n<b>Click on the buttons below for getting help and info about</b> {BOT_NAME}."
+            f"╭• <b>𝖠𝗋𝗍𝗂𝖿𝗂𝖼𝖺𝗅 𝖨𝗇𝗍𝖾𝗅𝗅𝗂𝗀𝖾𝗇𝖼𝖾 𝖨𝗇𝗍𝖾𝗀𝗋𝖺𝗍𝖾𝖽.</b>"
+            f"\n╭• <b>𝖠𝖽𝗏𝖺𝗇𝖼𝖾 𝖬𝖺𝗇𝖺𝗀𝖾𝗆𝖾𝗇𝗍 𝖢𝖺𝗉𝖺𝖻𝗂𝗅𝗂𝗍𝗂𝖾𝗌.</b>"
+            f"\n╭• <b>𝖠𝗇𝗂𝗆𝖾 𝖭𝖾𝗍𝗐𝗈𝗋𝗄 𝖺𝗇𝖽 𝖡𝗅𝗈𝗈𝖽𝗌.</b>"
+            f"\n\n<b>𝖢𝗅𝗂𝖼𝗄 𝗈𝗇 𝗍𝗁𝖾 𝖻𝗎𝗍𝗍𝗈𝗇𝗌 𝖻𝖾𝗅𝗈𝗐 𝖿𝗈𝗋 𝗁𝖾𝗅𝗉 𝖺𝗇𝖽 𝗂𝗇𝖿𝗈 𝖺𝖻𝗈𝗎𝗍</b> {BOT_NAME}."
         )
         await query.message.edit_text(
             text=message_text,
@@ -669,23 +653,23 @@ async def Miko_about_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
                 [
                     [
                         InlineKeyboardButton(
-                            text="ABOUT", callback_data="Miko_support"
+                            text="𝖠𝖻𝗈𝗎𝗍", callback_data="Miko_support"
                         ),
-                        InlineKeyboardButton(text="COMMAND", callback_data="help_back"),
+                        InlineKeyboardButton(text="𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌", callback_data="help_back"),
                     ],
                     [
-                        InlineKeyboardButton(text="INSIDER", callback_data="insider_"),
+                        InlineKeyboardButton(text="𝖲𝗍𝖺𝗍𝗂𝗌𝗍𝗂𝖼𝗌", callback_data="insider_"),
                     ],
                     [
-                        InlineKeyboardButton(text="◁", callback_data="Miko_back"),
+                        InlineKeyboardButton(text="ᐸ", callback_data="Miko_back"),
                     ],
                 ]
             ),
         )
     elif query.data == "Miko_support":
         message_text = (
-            "*Our bot leverages SQL, MongoDB, Telegram, MTProto for secure and efficient operations. It resides on a high-speed server, integrates numerous APIs, ensuring quick and versatile responses to user queries.*"
-            f"\n\n*If you find any bug in {BOT_NAME} Please report it at the support chat.*"
+            "𝖮𝗉𝗍𝗂𝗆𝗂𝗓𝖾𝖽 𝖿𝗈𝗋 𝖾𝖿𝖿𝗂𝖼𝗂𝖾𝗇𝖼𝗒, 𝗈𝗎𝗋 𝖻𝗈𝗍 𝗎𝗍𝗂𝗅𝗂𝗓𝖾𝗌 𝖲𝖰𝖫, 𝖬𝗈𝗇𝗀𝗈𝖣𝖡, 𝖠𝖯𝖨𝗌, 𝖺𝗇𝖽 𝖬𝖳𝖯𝗋𝗈𝗍𝗈 𝗍𝗈 𝖾𝗇𝗌𝗎𝗋𝖾 𝗌𝖾𝖼𝗎𝗋𝖾, 𝗋𝖺𝗉𝗂𝖽, 𝖺𝗇𝖽 𝗋𝖾𝗅𝗂𝖺𝖻𝗅𝖾 𝗈𝗉𝖾𝗋𝖺𝗍𝗂𝗈𝗇𝗌 𝗋𝗎𝗇𝗇𝗂𝗇𝗀 𝗈𝗇 𝖺 𝗁𝗂𝗀𝗁-𝗉𝖾𝗋𝖿𝗈𝗋𝗆𝖺𝗇𝖼𝖾 𝗌𝖾𝗋𝗏𝖾𝗋."
+            f"\n\n𝖨𝖿 𝗒𝗈𝗎 𝖿𝗂𝗇𝖽 𝖺𝗇𝗒 𝖻𝗎𝗀 𝗂𝗇 {BOT_NAME} 𝖯𝗅𝖾𝖺𝗌𝖾 𝗋𝖾𝗉𝗈𝗋𝗍 𝗂𝗍 𝖺𝗍 𝗍𝗁𝖾 𝗌𝗎𝗉𝗉𝗈𝗋𝗍 𝖼𝗁𝖺𝗍."
         )
         await query.message.edit_text(
             text=message_text,
@@ -695,14 +679,14 @@ async def Miko_about_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
                 [
                     [
                         InlineKeyboardButton(
-                            text="SUPPORT", url=f"https://t.me/{SUPPORT_CHAT}"
+                            text="𝖲𝗎𝗉𝗉𝗈𝗋𝗍", url=f"https://t.me/{SUPPORT_CHAT}"
                         ),
                         InlineKeyboardButton(
-                            text="DEVELOPER", url=f"tg://user?id={OWNER_ID}"
+                            text="𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝗋", url=f"tg://user?id={OWNER_ID}"
                         ),
                     ],
                     [
-                        InlineKeyboardButton(text="◁", callback_data="Miko_"),
+                        InlineKeyboardButton(text="ᐸ", callback_data="Miko_"),
                     ],
                 ]
             ),
@@ -731,7 +715,7 @@ async def get_help(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     [
                         [
                             InlineKeyboardButton(
-                                text="HELP",
+                                text="𝖧𝖾𝗅𝗉",
                                 url="https://t.me/{}?start=ghelp_{}".format(
                                     context.bot.username, module
                                 ),
@@ -742,12 +726,12 @@ async def get_help(update: Update, context: ContextTypes.DEFAULT_TYPE):
             )
             return
         await update.effective_message.reply_text(
-            "» *Choose an option for getting* [𝗵𝗲𝗹𝗽](https://telegra.ph/file/cce9038f6a9b88eb409b5.jpg)",
+            "𝖢𝗁𝗈𝗈𝗌𝖾 𝖺𝗇 𝗈𝗉𝗍𝗂𝗈𝗇 𝖿𝗈𝗋 𝗀𝖾𝗍𝗍𝗂𝗇𝗀 [𝗁𝖾𝗅𝗉](https://telegra.ph/file/cce9038f6a9b88eb409b5.jpg)",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="OPEN IN PM",
+                            text="𝖮𝗉𝖾𝗇 𝗂𝗇 𝖯𝖬",
                             url="https://t.me/{}?start=help".format(
                                 context.bot.username
                             ),
@@ -755,7 +739,7 @@ async def get_help(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     ],
                     [
                         InlineKeyboardButton(
-                            text="OPEN HERE",
+                            text="𝖮𝗉𝖾𝗇 𝗁𝖾𝗋𝖾",
                             callback_data="extra_command_handler",
                         )
                     ],
@@ -768,7 +752,7 @@ async def get_help(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
         module = args[1].lower()
         text = (
-            "Here is the available help for the *{}* module:\n".format(
+            "𝖧𝖾𝗋𝖾 𝗂𝗌 𝗍𝗁𝖾 𝖺𝗏𝖺𝗂𝗅𝖺𝖻𝗅𝖾 𝗁𝖾𝗅𝗉 𝖿𝗈𝗋 𝗍𝗁𝖾 *{}* 𝗆𝗈𝖽𝗎𝗅𝖾:\n".format(
                 HELPABLE[module].__mod_name__
             )
             + HELPABLE[module].__help__
@@ -777,7 +761,7 @@ async def get_help(update: Update, context: ContextTypes.DEFAULT_TYPE):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="◁", callback_data="help_back")]]
+                [[InlineKeyboardButton(text="ᐸ", callback_data="help_back")]]
             ),
         )
 
@@ -794,7 +778,7 @@ async def send_settings(chat_id, user_id, user=False):
             )
             await dispatcher.bot.send_message(
                 user_id,
-                "These are your current settings:" + "\n\n" + settings,
+                "𝖳𝗁𝖾𝗌𝖾 𝖺𝗋𝖾 𝗒𝗈𝗎𝗋 𝖼𝗎𝗋𝗋𝖾𝗇𝗍 𝗌𝖾𝗍𝗍𝗂𝗇𝗀𝗌:" + "\n\n" + settings,
                 parse_mode=ParseMode.MARKDOWN,
             )
 
@@ -848,7 +832,7 @@ async def settings_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     [
                         [
                             InlineKeyboardButton(
-                                text="◁",
+                                text="ᐸ",
                                 callback_data="stngs_back({})".format(chat_id),
                             )
                         ]
@@ -923,7 +907,7 @@ async def get_settings(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     [
                         [
                             InlineKeyboardButton(
-                                text="SETTINGS",
+                                text="𝖲𝖾𝗍𝗍𝗂𝗇𝗀𝗌",
                                 url="t.me/{}?start=stngs_{}".format(
                                     context.bot.username, chat.id
                                 ),
@@ -971,7 +955,7 @@ def main():
 
     function(CommandHandler("settings", get_settings))
     function(CallbackQueryHandler(settings_button, pattern=r"stngs_"))
-    function(CommandHandler("repo", repo))
+    function(CommandHandler("𝖻𝗈𝗍𝗌", 𝖻𝗈𝗍𝗌))
 
     function(CallbackQueryHandler(Miko_about_callback, pattern=r"Miko_"))
     function(CallbackQueryHandler(gitsource_callback, pattern=r"git_source"))
