@@ -11,6 +11,7 @@ from Mikobot import app
 
 # List of additional images
 ADDITIONAL_IMAGES =[
+    "https://i.ibb.co/hB7qFXf/file-1217.jpg"
 ]
 
 
