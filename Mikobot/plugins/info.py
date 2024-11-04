@@ -85,7 +85,7 @@ async def info(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if chat_obj.type == ChatType.PRIVATE:
         if chat_obj.username:
-            head = f"╭• <b>𝖴𝗌𝖾𝗋 𝖨𝗇𝖿𝗈𝗋𝗆𝖺𝗍𝗂𝗈𝗇 </b> 】⇦\n\n"
+            head = f"<b>❉ 𝖴𝗌𝖾𝗋 𝖨𝗇𝖿𝗈𝗋𝗆𝖺𝗍𝗂𝗈𝗇 </b>\n\n"
             if chat_obj.username.endswith("bot"):
                 head = f"╭• <b>𝖡𝗈𝗍 𝖨𝗇𝖿𝗈𝗋𝗆𝖺𝗍𝗂𝗈𝗇</b> 】⇦\n\n"
 
@@ -221,11 +221,9 @@ async def stats(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 __help__ = """
-*Overall information about user:*
+*𝖮𝗏𝖾𝗋𝖺𝗅𝗅 𝗂𝗇𝖿𝗈𝗋𝗆𝖺𝗍𝗂𝗈𝗇 𝖺𝖻𝗈𝗎𝗍 𝖺 𝗎𝗌𝖾𝗋:*
 
-» /info : Fetch user information.
-
-» /uinfo : Fetch user information in banner.
+» /info : 𝖥𝖾𝗍𝖼𝗁 𝗎𝗌𝖾𝗋 𝗂𝗇𝖿𝗈𝗋𝗆𝖺𝗍𝗂𝗈𝗇.
 """
 
 # <================================================ HANDLER =======================================================>
@@ -235,7 +233,7 @@ INFO_HANDLER = CommandHandler(("info", "book"), info, block=False)
 function(STATS_HANDLER)
 function(INFO_HANDLER)
 
-__mod_name__ = "INFO"
+__mod_name__ = "𝖨𝗇𝖿𝗈"
 __command_list__ = ["info"]
 __handlers__ = [INFO_HANDLER, STATS_HANDLER]
 # <================================================ END =======================================================>
