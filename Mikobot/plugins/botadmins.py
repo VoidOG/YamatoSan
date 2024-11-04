@@ -80,29 +80,5 @@ function(CommandHandler("botadmins", botstaff, block=False))
 
 
 # <=================================================== HELP ====================================================>
-__help__ = """
-╭• *Bot Admins Only:*
 
-» /stats: Shows bot stats.
-
-» /ping: see ping.
-
-» /gban: Global ban.
-
-» /gbanlist: Shows gban list.
-
-» /botadmins: Opens Bot admin lists.
-
-» /gcast: Advance broadcast system. Just reply to any message.
-
-╭• *Write with text message*
-
-» /broadcastall
-
-» /broadcastusers
-
-» /broadcastgroups
-"""
-
-__mod_name__ = "𝖡𝗈𝗍 𝖠𝖽𝗆𝗂𝗇"
 # <================================================ HANDLER =======================================================>
